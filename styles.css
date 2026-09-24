@@ -210,6 +210,73 @@ figcaption { margin-bottom: 16px; }
 }
 .screens--1 img { border-radius: 36px; }
 
+/* Try-on screen: live banner laid over the screenshot.
+   Sizes are in design pixels of a 357px-wide phone, scaled with the column. */
+.phone-stack { position: relative; }
+.phone-stack > img { position: relative; z-index: 0; }
+
+.try-on-banner {
+  --u: calc(100cqi / 357);
+  position: absolute;
+  left: calc(var(--u) * 105.86);
+  top: calc(var(--u) * 213.62);
+  width: calc(var(--u) * 251.77);
+  height: calc(var(--u) * 133.52);
+  overflow: hidden;
+  background: #000;
+  color: #fff;
+  font-family: var(--sans);
+}
+.try-on-banner video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.try-on-banner > span,
+.try-on-banner > svg { position: absolute; }
+
+.try-on-banner__title {
+  left: calc(var(--u) * 15.26);
+  top: calc(var(--u) * 15.26);
+  font-size: calc(var(--u) * 19.07);
+  line-height: 1.2;
+}
+.try-on-banner__text {
+  left: calc(var(--u) * 15.26);
+  top: calc(var(--u) * 45.78);
+  width: calc(var(--u) * 221.25);
+  font-size: calc(var(--u) * 12.4);
+  line-height: 1.23;
+}
+.try-on-banner__close {
+  left: calc(var(--u) * 225.7);
+  top: calc(var(--u) * 20.51);
+  width: calc(var(--u) * 16.02);
+  height: calc(var(--u) * 16.02);
+}
+.try-on-banner__button {
+  left: calc(var(--u) * 15.76);
+  top: calc(var(--u) * 87);
+  display: flex;
+  align-items: center;
+  gap: calc(var(--u) * 3.81);
+  padding: calc(var(--u) * 7.63) calc(var(--u) * 11.44) calc(var(--u) * 7.63) calc(var(--u) * 7.63);
+  border-radius: calc(var(--u) * 3.81);
+  background: #fff;
+  box-shadow: inset 0 0 0 calc(var(--u) * 0.95) rgba(0, 0, 0, 0.12);
+  color: #000;
+  font-size: calc(var(--u) * 12.4);
+  line-height: 1.23;
+  white-space: nowrap;
+}
+.try-on-banner__button svg {
+  width: calc(var(--u) * 14.54);
+  height: calc(var(--u) * 14.54);
+  flex-shrink: 0;
+}
+
 /* Screen recordings inside a phone column (same frame as the images) */
 .phone-video {
   display: block;

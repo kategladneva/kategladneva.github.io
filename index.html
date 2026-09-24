@@ -50,7 +50,19 @@
         </figure>
         <figure>
           <figcaption>Virtual Try-On</figcaption>
-          <img src="img/ai-try-on@2x.webp" width="357" height="774" alt="Virtual try-on screen: upload a photo to see the item on you" loading="lazy">
+          <div class="phone-stack">
+            <img src="img/ai-try-on@2x.webp" width="357" height="774" alt="Virtual try-on screen: upload a photo to see the item on you" loading="lazy">
+            <div class="try-on-banner" aria-hidden="true">
+              <video class="loop-video" src="video/try-on-banner.mp4" muted loop playsinline preload="metadata"></video>
+              <span class="try-on-banner__title">Онлайн-примерка</span>
+              <span class="try-on-banner__text">Загрузите свое фото, и мы покажем вещь на вас</span>
+              <svg class="try-on-banner__close" viewBox="0 0 16.02 16.02"><path transform="translate(2.434 2.434)" fill="#fff" d="M10.918 0.236L11.153 0.473L6.049 5.576L11.153 10.682L10.918 10.918L10.682 11.153L5.576 6.049L0.473 11.153L0.236 10.918L0 10.682L5.104 5.576L0 0.473L0.473 0L5.576 5.104L10.682 0L10.918 0.236Z"/></svg>
+              <span class="try-on-banner__button">
+                <svg viewBox="0 0 14.54 14.54"><path fill="#000" d="M9.093 5.444L14.537 6.806L14.421 7.269L14.537 7.731L9.091 9.093L7.731 14.537L7.269 14.421L7.268 14.421L6.806 14.537L5.444 9.093L0 7.731L0.115 7.268L0 6.806L5.443 5.444L6.805 0L7.268 0.115L7.731 0L9.093 5.444ZM6.23 6.23L2.08 7.268L6.23 8.306L7.268 12.456L8.306 8.306L12.456 7.268L8.306 6.23L7.268 2.08L6.23 6.23Z"/></svg>
+                Примерить онлайн
+              </span>
+            </div>
+          </div>
         </figure>
         <figure>
           <figcaption>Create an outfit</figcaption>
@@ -238,7 +250,7 @@
 
     // Phone videos: play only while on screen; respect reduced motion
     (function () {
-      var videos = document.querySelectorAll(".phone-video");
+      var videos = document.querySelectorAll(".phone-video, .loop-video");
       var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       if (reduce) {
         videos.forEach(function (v) { v.controls = true; });
