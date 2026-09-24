@@ -1,0 +1,447 @@
+/* ------------------------------------------------------------------
+   Licensed fonts (optional)
+   If you have web licenses, put the files into /fonts and uncomment.
+   They will take priority over the free fallbacks automatically.
+
+@font-face {
+  font-family: "CoFo Sans LaModa";
+  src: url("fonts/CoFoSansLaModa-Regular.woff2") format("woff2");
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Canela Text";
+  src: url("fonts/CanelaText-Regular.woff2") format("woff2");
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Canela Text";
+  src: url("fonts/CanelaText-RegularItalic.woff2") format("woff2");
+  font-weight: 400; font-style: italic; font-display: swap;
+}
+------------------------------------------------------------------- */
+
+:root {
+  --sans: "CoFo Sans LaModa", "Onest", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --serif: "Canela Text", "Newsreader", Georgia, "Times New Roman", serif;
+
+  --white: #ffffff;
+  --black: #000000;
+  --ink-muted: rgba(0, 0, 0, 0.5);
+  --paper-muted: rgba(255, 255, 255, 0.5);
+
+  --phone-gap: 64px;
+  --page-pad: 44px;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--sans);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, p, figure { margin: 0; font-weight: 400; }
+
+img { display: block; max-width: 100%; height: auto; }
+
+a { color: inherit; text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 3px; }
+a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ------------------------------------------------------------------
+   Intro
+------------------------------------------------------------------- */
+
+.intro {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: clamp(420px, 47.3vw, 715px);
+  padding: 120px 20px;
+  background: var(--white);
+  color: var(--black);
+}
+
+.contacts {
+  position: absolute;
+  top: 64px;
+  right: var(--page-pad);
+  font-size: 16px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-align: right;
+  color: var(--ink-muted);
+}
+
+.copy {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+  cursor: copy;
+}
+.copy:hover { color: var(--black); }
+.copy.is-copied { color: var(--black); }
+.copy:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.name span { white-space: nowrap; }
+
+.name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: clamp(24px, 6.4vw, 40px);
+  line-height: 1.2;
+}
+
+/* ------------------------------------------------------------------
+   Case sections
+------------------------------------------------------------------- */
+
+.case {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 0 24px;
+  background: linear-gradient(180deg, #000 -12.41%, #2f3441 140.5%);
+  background: linear-gradient(in oklab 180deg, oklab(0% 0 0) -12.41%, oklab(39.5% -0.0005 -0.028) 140.5%);
+}
+
+.badge {
+  padding: 10px 24px;
+  border-radius: 100px;
+  background: var(--white);
+  color: var(--black);
+  font-family: var(--sans);
+  font-size: 28px;
+  line-height: 34px;
+  white-space: nowrap;
+  margin-bottom: 101px;
+}
+
+.label,
+figcaption {
+  font-family: var(--serif);
+  font-size: 24px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--paper-muted);
+  text-align: center;
+}
+
+.label { margin-bottom: 16px; }
+.label--gap { margin-top: 100px; }
+
+figcaption { margin-bottom: 16px; }
+
+.note,
+.role {
+  font-size: 16px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--paper-muted);
+  text-align: center;
+  padding-inline: 20px;
+}
+
+.note { margin-top: 74px; }
+
+.role { margin-top: 116px; }
+
+/* ------------------------------------------------------------------
+   Screens
+------------------------------------------------------------------- */
+
+.screens {
+  display: grid;
+  justify-content: center;
+  width: 100%;
+  padding-inline: var(--page-pad);
+}
+
+.screens--3 { grid-template-columns: repeat(3, minmax(0, 357px)); gap: var(--phone-gap); }
+.screens--2 { grid-template-columns: repeat(2, minmax(0, 357px)); gap: var(--phone-gap); }
+.screens--1 { grid-template-columns: minmax(0, 357px); }
+.screens--5 { grid-template-columns: repeat(5, minmax(0, 262px)); gap: 16px; }
+
+.screens figure { container-type: inline-size; }
+
+/* Phone mockups: 38px corner radius at 357px width, scaled with the column */
+.screens--3 img,
+.screens--2 img,
+.screens--1 img {
+  width: 100%;
+  border-radius: 38px;
+}
+@supports (width: 1cqi) {
+  .screens figure img { border-radius: 10.64cqi; }
+}
+.screens--1 img { border-radius: 36px; }
+
+/* Screen recordings inside a phone column (same frame as the images) */
+.phone-video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 357 / 774;
+  object-fit: cover;
+  background: #000;
+  border-radius: 38px;
+}
+@supports (width: 1cqi) {
+  .screens figure .phone-video { border-radius: 10.64cqi; }
+  /* recording taken with the device frame: match the real screen corners */
+  .screens figure .phone-video--device { border-radius: 14.3cqi; }
+}
+
+/* ------------------------------------------------------------------
+   Premium showreel (click to play / pause)
+------------------------------------------------------------------- */
+
+.showreel {
+  position: relative;
+  width: min(1134px, calc(100% - 2 * var(--page-pad)));
+  margin-top: 40px;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #000;
+}
+
+.showreel-video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1920 / 1032;
+}
+
+.showreel-toggle {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 24px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.showreel-toggle svg {
+  width: 32px;
+  height: 32px;
+  transition: opacity 0.25s ease;
+}
+
+.showreel .icon-pause { display: none; }
+.showreel.is-playing .icon-play { display: none; }
+.showreel.is-playing .icon-pause { display: block; opacity: 0; }
+.showreel.is-playing:hover .icon-pause,
+.showreel-toggle:focus-visible .icon-pause { opacity: 1; }
+
+.showreel-toggle:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: -6px;
+  border-radius: 24px;
+}
+
+@media (hover: none) {
+  .showreel.is-playing .icon-pause { opacity: 0.8; }
+}
+
+/* ------------------------------------------------------------------
+   Loyalty program
+------------------------------------------------------------------- */
+
+.case--club {
+  min-height: clamp(560px, 53vw, 800px);
+  background: #6a5ea8;
+  background: conic-gradient(in oklab from calc(275.94deg + var(--club-angle)) at calc(55.98% + var(--club-dx, 0%)) calc(31.93% + var(--club-dy, 0%)),
+    oklab(94.7% -0.067 0.088) 0%,
+    oklab(90.6% -0.007 -0.045) 8.33%,
+    oklab(74.7% -0.021 -0.077) 16.67%,
+    oklab(28.7% -0.024 -0.075) 25%,
+    oklab(9.4% -0.006 -0.014) 33.33%,
+    oklab(10.3% -0.008 -0.016) 41.67%,
+    oklab(28.7% -0.024 -0.075) 50%,
+    oklab(35% -0.013 -0.160) 58.33%,
+    oklab(47.2% 0.142 -0.082) 66.67%,
+    oklab(68.8% 0.183 0.082) 75%,
+    oklab(75.3% 0.120 0.094) 83.33%,
+    oklab(87.3% 0.091 -0.064) 91.67%,
+    oklab(94.7% -0.067 0.088) 100%);
+}
+
+@property --club-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+/* Without JS the gradient still turns on its own; club.js takes over when it runs */
+.case--club { animation: club-spin 40s linear infinite; }
+.case--club.is-interactive { animation: none; }
+
+@keyframes club-spin {
+  to { --club-angle: 360deg; }
+}
+
+.case--club .club-logo,
+.case--club .club-soon {
+  text-shadow: 0 0 32px rgba(0, 0, 0, 0.45);
+}
+.case--club .club-logo svg { filter: drop-shadow(0 0 24px rgba(0, 0, 0, 0.45)); }
+
+.case--club .badge { margin-bottom: 0; }
+
+.club-logo {
+  --w: clamp(170px, 26.6vw, 402px);
+  display: flex;
+  align-items: baseline;
+  gap: calc(var(--w) * 0.093);
+  margin-top: auto;
+  padding-top: 60px;
+}
+
+.club-logo svg {
+  width: var(--w);
+  height: auto;
+}
+
+.club-word {
+  font-family: var(--serif);
+  font-size: calc(var(--w) * 0.2536);
+  line-height: 1;
+  letter-spacing: -0.0065em;
+  color: var(--white);
+}
+
+.club-soon {
+  margin-top: 40px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(28px, 2.65vw, 40px);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--paper-muted);
+}
+
+.case--club .role { margin-top: auto; padding-top: 60px; }
+
+/* ------------------------------------------------------------------
+   Tablet
+------------------------------------------------------------------- */
+
+@media (max-width: 1100px) {
+  :root { --phone-gap: 32px; --page-pad: 32px; }
+  .screens--5 { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+}
+
+/* ------------------------------------------------------------------
+   Mobile: screens become a swipeable row
+------------------------------------------------------------------- */
+
+@media (max-width: 760px) {
+  :root { --page-pad: 20px; }
+
+  .contacts { top: 24px; right: 20px; font-size: 14px; }
+
+  .badge { font-size: 20px; line-height: 26px; padding: 8px 18px; margin-bottom: 48px; }
+
+  .label, figcaption { font-size: 20px; }
+  .label--gap { margin-top: 56px; }
+
+  .note { margin-top: 32px; }
+  .showreel { margin-top: 20px; border-radius: 16px; }
+  .showreel-toggle { padding: 16px; }
+  .role { margin-top: 56px; }
+
+  .screens--3,
+  .screens--2,
+  .screens--5 {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: min(72vw, 300px);
+    gap: 16px;
+    justify-content: start;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--page-pad);
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+  }
+  .screens--5 { grid-auto-columns: min(62vw, 260px); }
+  .screens::-webkit-scrollbar { display: none; }
+  .screens > * { scroll-snap-align: start; }
+
+  .screens--1 { grid-template-columns: min(72vw, 300px); }
+}
+
+/* ------------------------------------------------------------------
+   Scroll reveal for screens (only when JS is on)
+------------------------------------------------------------------- */
+
+.js .screens > * {
+  opacity: 0;
+  transform: translateY(48px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: calc(var(--i, 0) * 90ms);
+}
+
+.js .screens.is-visible > * {
+  opacity: 1;
+  transform: none;
+}
+
+/* Single blocks (the wide Premium video) use the same motion */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(48px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.js .reveal.is-visible { opacity: 1; transform: none; }
+
+/* ------------------------------------------------------------------
+   Reduced motion: no movement, no spinning gradient
+------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .case--club { animation: none; }
+  .js .screens > *,
+  .js .reveal { transform: none; transition: opacity 0.4s ease; }
+}
