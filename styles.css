@@ -210,6 +210,28 @@ figcaption { margin-bottom: 16px; }
 }
 .screens--1 img { border-radius: 36px; }
 
+/* The one-step checkout screen is taller than the phone frame: scroll to see the rest */
+.scroll-phone {
+  width: 100%;
+  aspect-ratio: 357 / 774;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border-radius: 36px;
+  background: #fff;
+  scrollbar-width: none;
+}
+.scroll-phone::-webkit-scrollbar { display: none; }
+.scroll-phone img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+}
+.scroll-phone:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
 /* Try-on screen: live banner laid over the screenshot.
    Sizes are in design pixels of a 357px-wide phone, scaled with the column. */
 .phone-stack { position: relative; }
