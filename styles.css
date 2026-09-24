@@ -75,17 +75,11 @@ a:focus-visible {
   color: var(--black);
 }
 
-.intro-meta {
+.intro-meta,
+.contacts {
   position: absolute;
   top: 64px;
   right: var(--page-pad);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 14px;
-}
-
-.contacts {
   font-size: 16px;
   line-height: 1.2;
   letter-spacing: -0.01em;
@@ -94,17 +88,9 @@ a:focus-visible {
 }
 
 .cv-download {
-  font-size: 16px;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-  color: var(--black);
-  border-bottom: 1px solid var(--ink-muted);
-  padding-bottom: 1px;
+  color: inherit;
 }
-.cv-download:hover {
-  text-decoration: none;
-  border-color: var(--black);
-}
+.cv-download:hover { color: var(--black); }
 
 .copy {
   padding: 0;
@@ -484,8 +470,8 @@ figcaption { margin-bottom: 16px; }
 @media (max-width: 760px) {
   :root { --page-pad: 20px; }
 
-  .intro-meta { top: 24px; right: 20px; gap: 10px; }
-  .contacts, .cv-download { font-size: 14px; }
+  .intro-meta, .contacts { top: 24px; right: 20px; }
+  .cv-download { font-size: 14px; }
 
   .badge { font-size: 20px; line-height: 26px; padding: 8px 18px; margin-bottom: 48px; }
 
