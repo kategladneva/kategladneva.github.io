@@ -380,21 +380,19 @@ figcaption { margin-bottom: 16px; }
 ------------------------------------------------------------------- */
 
 .case--club {
-  min-height: clamp(560px, 53vw, 800px);
-  background: #6a5ea8;
-  background: conic-gradient(in oklab from calc(275.94deg + var(--club-angle)) at calc(55.98% + var(--club-dx, 0%)) calc(31.93% + var(--club-dy, 0%)),
+  background: conic-gradient(in oklab from calc(355.66deg + var(--club-angle, 0deg)) at calc(55.98% + var(--club-dx, 0%)) calc(31.93% + var(--club-dy, 0%)),
     oklab(94.7% -0.067 0.088) 0%,
-    oklab(90.6% -0.007 -0.045) 8.33%,
-    oklab(74.7% -0.021 -0.077) 16.67%,
-    oklab(28.7% -0.024 -0.075) 25%,
-    oklab(9.4% -0.006 -0.014) 33.33%,
-    oklab(10.3% -0.008 -0.016) 41.67%,
-    oklab(28.7% -0.024 -0.075) 50%,
-    oklab(35% -0.013 -0.160) 58.33%,
-    oklab(47.2% 0.142 -0.082) 66.67%,
-    oklab(68.8% 0.183 0.082) 75%,
-    oklab(75.3% 0.120 0.094) 83.33%,
-    oklab(87.3% 0.091 -0.064) 91.67%,
+    oklab(90.6% -0.007 -0.045) 6.26%,
+    oklab(74.7% -0.021 -0.077) 12.52%,
+    oklab(28.7% -0.024 -0.075) 20.45%,
+    oklab(9.4% -0.006 -0.014) 56.24%,
+    oklab(10.3% -0.008 -0.016) 60.82%,
+    oklab(28.7% -0.024 -0.075) 67.06%,
+    oklab(35% -0.013 -0.160) 72.71%,
+    oklab(47.2% 0.142 -0.082) 78.94%,
+    oklab(68.8% 0.183 0.082) 83.42%,
+    oklab(75.3% 0.120 0.094) 88.32%,
+    oklab(87.3% 0.091 -0.064) 93.84%,
     oklab(94.7% -0.067 0.088) 100%);
 }
 
@@ -404,55 +402,46 @@ figcaption { margin-bottom: 16px; }
   initial-value: 0deg;
 }
 
-/* Without JS the gradient still turns on its own; club.js takes over when it runs */
-.case--club { animation: club-spin 40s linear infinite; }
-.case--club.is-interactive { animation: none; }
-
-@keyframes club-spin {
-  to { --club-angle: 360deg; }
-}
-
-.case--club .club-logo,
-.case--club .club-soon {
-  text-shadow: 0 0 32px rgba(0, 0, 0, 0.45);
-}
-.case--club .club-logo svg { filter: drop-shadow(0 0 24px rgba(0, 0, 0, 0.45)); }
-
 .case--club .badge { margin-bottom: 0; }
 
 .club-logo {
-  --w: clamp(170px, 26.6vw, 402px);
+  --w: clamp(190px, 21.3vw, 322px);
   display: flex;
   align-items: baseline;
   gap: calc(var(--w) * 0.093);
-  margin-top: auto;
-  padding-top: 60px;
+  margin-top: 92px;
+  margin-bottom: 92px;
 }
-
-.club-logo svg {
-  width: var(--w);
-  height: auto;
-}
-
+.club-logo svg { width: var(--w); height: auto; }
 .club-word {
   font-family: var(--serif);
   font-size: calc(var(--w) * 0.2536);
   line-height: 1;
   letter-spacing: -0.0065em;
-  color: var(--white);
+  color: #000;
 }
 
-.club-soon {
-  margin-top: 40px;
+.label--ink { color: var(--ink-muted); margin-bottom: 16px; }
+.case--club .label { text-align: center; }
+
+.screens--compare .col-label {
   font-family: var(--serif);
-  font-style: italic;
-  font-size: clamp(28px, 2.65vw, 40px);
+  font-size: 24px;
   line-height: 1.2;
   letter-spacing: -0.01em;
   color: var(--paper-muted);
+  text-align: center;
+  margin: 0;
 }
+.screens--compare .col-before { grid-column: 1; grid-row: 1; }
+.screens--compare .col-after { grid-column: 2 / 4; grid-row: 1; }
+.screens--compare > figure:nth-of-type(1) { grid-column: 1; grid-row: 2; }
+.screens--compare > figure:nth-of-type(2) { grid-column: 2; grid-row: 2; }
+.screens--compare > figure:nth-of-type(3) { grid-column: 3; grid-row: 2; }
+.screens--compare { row-gap: 16px; margin-top: 106px; }
+.only-mobile { display: none; }
 
-.case--club .role { margin-top: auto; padding-top: 60px; }
+.case--club .role { margin-top: 96px; }
 
 /* ------------------------------------------------------------------
    Tablet
@@ -502,6 +491,16 @@ figcaption { margin-bottom: 16px; }
   .screens > * { scroll-snap-align: start; }
 
   .screens--1 { grid-template-columns: min(72vw, 300px); }
+
+  /* club: captions move onto each phone, the shared column labels go away */
+  .only-mobile { display: block; }
+  .case--club .label--ink { display: none; }
+  .screens--compare { margin-top: 40px; row-gap: 0; }
+  .screens--compare .col-label { display: none; }
+  .screens--compare > figure:nth-of-type(n) { grid-column: auto; grid-row: auto; }
+  .club-logo { margin-top: 72px; margin-bottom: 56px; }
+  .case--club figcaption.only-mobile { color: var(--paper-muted); }
+  .case--club .screens--3:not(.screens--compare) figcaption { color: var(--ink-muted); }
 }
 
 /* ------------------------------------------------------------------
@@ -537,7 +536,6 @@ figcaption { margin-bottom: 16px; }
 ------------------------------------------------------------------- */
 
 @media (prefers-reduced-motion: reduce) {
-  .case--club { animation: none; }
   .js .screens > *,
   .js .reveal { transform: none; transition: opacity 0.4s ease; }
 }
