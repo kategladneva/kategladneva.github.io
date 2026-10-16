@@ -328,7 +328,7 @@ figcaption { margin-bottom: 16px; }
 .showreel {
   position: relative;
   width: min(1134px, calc(100% - 2 * var(--page-pad)));
-  margin-top: 40px;
+  margin-top: 24px;
   border-radius: 24px;
   overflow: hidden;
   background: #000;
@@ -550,7 +550,7 @@ figcaption { margin-bottom: 16px; }
   color: var(--white);
 }
 
-.note--lg { margin-top: 0; margin-bottom: 16px; font-size: 24px; }
+.note--lg { margin-top: 0; margin-bottom: 24px; font-size: 16px; }
 
 .showreel--concept {
   width: min(1199px, calc(100% - 2 * var(--page-pad)));
@@ -617,7 +617,7 @@ figcaption { margin-bottom: 16px; }
   .label--gap { margin-top: 56px; }
 
   .note { margin-top: 32px; }
-  .showreel { margin-top: 20px; border-radius: 16px; }
+  .showreel { margin-top: 24px; border-radius: 16px; }
   .showreel-toggle { padding: 16px; }
   .role { margin-top: 56px; }
 
@@ -645,7 +645,7 @@ figcaption { margin-bottom: 16px; }
   /* concept */
   .case--concept .badge { margin-bottom: 56px; }
   .concept-text, .concept-steps { margin-bottom: 64px; }
-  .concept-text p, .sonya-about, .note--lg { font-size: 18px; }
+  .concept-text p, .sonya-about { font-size: 18px; }
   .concept-steps { width: 100%; }
   .concept-steps h3 { padding-inline: var(--page-pad); }
   .screens--steps { grid-auto-columns: min(60vw, 240px); padding-inline: var(--page-pad); }
@@ -654,7 +654,7 @@ figcaption { margin-bottom: 16px; }
   .sonya-photo { grid-row: auto; width: min(72vw, 300px); }
   .sonya-name { grid-column: 1; margin: -48px 0 12px 12px; font-size: clamp(44px, 14vw, 64px); }
   .sonya-about { grid-column: 1; }
-  .showreel--concept { border-radius: 16px; aspect-ratio: 1 / 1.1; }
+  .showreel--concept { margin-top: 0; border-radius: 16px; aspect-ratio: 1 / 1.1; }
   .showreel--concept .showreel-video { height: 88%; border-radius: 12cqw; }
   .concept-title { margin: 64px 0 32px; }
   .case--concept .role { margin-top: 64px; }
