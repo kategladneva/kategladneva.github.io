@@ -184,6 +184,68 @@
       <p class="role">My role — Art Direction, Product designer<br>2026</p>
     </section>
 
+    <!-- 6. Concept -->
+    <section class="case case--concept" aria-labelledby="case-concept">
+      <h2 class="badge" id="case-concept">concept</h2>
+
+      <div class="concept-text reveal">
+        <h3>The way we shop</h3>
+        <p>Online stores still follow the same old model: browse, choose, buy.</p>
+        <p>But expectations are changing. Customers want more than convenience — they want inspiration and self-expression. Endless searching leads to decision fatigue and abandoned purchases.</p>
+        <p>Fashion has become a language through which people express themselves.</p>
+        <p>We are entering a new era of emotional commerce, where it’s not just about convenience, but also about inspiration and the joy of the experience.</p>
+      </div>
+
+      <div class="concept-text reveal">
+        <h3>The challenges of finding your style</h3>
+        <p>We know that users want to feel confident in what they wear, but they face several barriers along the way:</p>
+        <p>— How do I put together an outfit?<br>— What works best for me?<br>— How can I stay on trend?</p>
+        <p>We also know that users often struggle to articulate what they’re looking for.</p>
+      </div>
+
+      <div class="concept-steps">
+        <h3 class="reveal">The long way to your style</h3>
+        <div class="screens screens--steps">
+          <figure><figcaption><span>Choice overload</span></figcaption><img src="img/concept-step-1@2x.webp" width="300" height="400" alt="Choice overload: a grid of many similar items" loading="lazy"></figure>
+          <figure><figcaption><span>Finding matching items</span></figcaption><img src="img/concept-step-2@2x.webp" width="300" height="400" alt="Finding items that match the dress" loading="lazy"></figure>
+          <figure><figcaption><span>Try-on</span></figcaption><img src="img/concept-step-3@2x.webp" width="300" height="400" alt="Trying the dress on in a fitting room" loading="lazy"></figure>
+          <figure><figcaption><span>Outfit in real life</span></figcaption><img src="img/concept-step-4@2x.webp" width="300" height="400" alt="The finished outfit in real life" loading="lazy"></figure>
+        </div>
+      </div>
+
+      <div class="sonya">
+        <img class="sonya-photo reveal" src="img/concept-sonya@2x.webp" width="364" height="488" alt="Sonya, the persona of the concept" loading="lazy">
+        <p class="sonya-name reveal" style="--d:1">Hi, I’m Sonya!</p>
+        <p class="sonya-about reveal" style="--d:2">Age: 31<br>Job: Marketing specialist at a creative agency Income: Upper-middle Gets inspiration and shops on: Instagram, Pinterest, and single-brand stores<br><br>Next week, she’s going to the theatre with friends and has been searching for an evening outfit for days — something elegant, but not boring.</p>
+      </div>
+
+      <p class="note note--lg reveal">Her new shopping experience.&nbsp; Viewing time: 30 s</p>
+      <div class="showreel showreel--concept reveal">
+        <video class="showreel-video" width="600" height="1210"
+               src="video/concept.mp4" poster="video/concept-poster.jpg"
+               playsinline preload="none"
+               aria-label="Concept video: Sonya&rsquo;s new shopping experience, 30 seconds"></video>
+        <button class="showreel-toggle" type="button" aria-label="Play video" aria-pressed="false">
+          <svg class="icon-play" viewBox="0 0 32 32" aria-hidden="true">
+            <path transform="translate(8 6)" d="M18 10L0 20V0L18 10Z" fill="#fff"/>
+          </svg>
+          <svg class="icon-pause" viewBox="0 0 32 32" aria-hidden="true">
+            <rect x="8" y="6" width="5" height="20" fill="#fff"/>
+            <rect x="19" y="6" width="5" height="20" fill="#fff"/>
+          </svg>
+        </button>
+      </div>
+
+      <h3 class="concept-title reveal">Explore the looks you never imagined</h3>
+      <div class="screens screens--3">
+        <figure><img src="img/concept-screen-1@2x.webp" width="357" height="776" alt="Concept home screen: A Night Out, Sonya&rsquo;s evening looks" loading="lazy"></figure>
+        <figure><img src="img/concept-screen-2@2x.webp" width="357" height="776" alt="Concept screen: Viral Picks" loading="lazy"></figure>
+        <figure><img src="img/concept-screen-3@2x.webp" width="357" height="776" alt="Concept screen: tell me what you are looking for and the app styles it" loading="lazy"></figure>
+      </div>
+
+      <p class="role">My role — Product designer<br>2025</p>
+    </section>
+
   </main>
 
   <script>
@@ -250,10 +312,8 @@
       });
     })();
 
-    // Premium showreel: click to play, click again to pause
-    (function () {
-      var wrap = document.querySelector(".showreel");
-      if (!wrap) return;
+    // Showreels (Premium, Concept): click to play, click again to pause
+    document.querySelectorAll(".showreel").forEach(function (wrap) {
       var video = wrap.querySelector("video");
       var btn = wrap.querySelector(".showreel-toggle");
       function sync() {
@@ -269,7 +329,7 @@
       video.addEventListener("play", sync);
       video.addEventListener("pause", sync);
       video.addEventListener("ended", function () { video.load(); sync(); });
-    })();
+    });
 
     // Phone videos: play only while on screen; respect reduced motion
     (function () {

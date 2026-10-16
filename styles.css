@@ -444,12 +444,161 @@ figcaption { margin-bottom: 16px; }
 .case--club .role { margin-top: 96px; }
 
 /* ------------------------------------------------------------------
+   Concept
+------------------------------------------------------------------- */
+
+.case--concept { --text-w: min(1273px, calc(100% - 2 * var(--page-pad))); }
+
+.case--concept .badge { margin-bottom: 83px; }
+
+.concept-text,
+.concept-steps {
+  width: var(--text-w);
+  margin-bottom: 100px;
+}
+
+.concept-text h3,
+.concept-steps h3,
+.concept-title {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(36px, 4.23vw, 64px);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--white);
+}
+
+.concept-text h3 { margin-bottom: 24px; }
+.concept-text p {
+  max-width: 874px;
+  font-size: 24px;
+  line-height: 1.2;
+  color: var(--white);
+}
+.concept-text p + p { margin-top: 1.2em; }
+
+.concept-steps h3 { margin-bottom: 36px; }
+
+.screens--steps {
+  grid-template-columns: repeat(4, minmax(0, 300px));
+  gap: 24px;
+  padding-inline: 0;
+}
+.screens--steps figcaption {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 24px;
+  font-family: var(--sans);
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--white);
+  text-align: left;
+  white-space: nowrap;
+}
+.screens--steps figcaption::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  margin-right: 0; /* the 24px column gap gives the right-hand space */
+  background: rgba(255, 255, 255, 0.3);
+}
+.screens--steps figure:last-child figcaption::after { display: none; }
+.screens--steps figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.sonya {
+  position: relative;
+  display: grid;
+  grid-template-columns: 364px minmax(0, 1fr);
+  column-gap: 22px;
+  align-content: start;
+  width: min(1167px, calc(100% - 2 * var(--page-pad)));
+  margin-bottom: 47px;
+}
+.sonya-photo {
+  grid-row: 1 / 3;
+  display: block;
+  width: 364px;
+  height: auto;
+  border-bottom: 1px solid #d9d9d9;
+}
+.sonya-name {
+  position: relative;
+  z-index: 1;
+  grid-column: 2;
+  margin: 118px 0 18px -138px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 100px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  white-space: nowrap;
+}
+.sonya-about {
+  grid-column: 2;
+  max-width: 781px;
+  font-size: 24px;
+  line-height: 1.2;
+  color: var(--white);
+}
+
+.note--lg { margin-top: 0; margin-bottom: 16px; font-size: 24px; }
+
+.showreel--concept {
+  width: min(1199px, calc(100% - 2 * var(--page-pad)));
+  margin-top: 0;
+  border-radius: 38px;
+  background:
+    radial-gradient(ellipse 92% 152% at 50% 134% in oklab, oklab(39.5% -0.0005 -0.028) 0%, oklab(39.5% -0.0005 -0.028 / 0%) 100%),
+    #000;
+}
+.showreel--concept {
+  container-type: inline-size;
+  aspect-ratio: 1199 / 640;
+}
+/* the phone recording sits centred on the glow: 288 x 581 in the 1199 x 640 frame */
+.showreel--concept .showreel-video {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: auto;
+  height: 90.78%;
+  aspect-ratio: 600 / 1210;
+  object-fit: cover;
+  border-radius: 3.753cqw;
+}
+.showreel--concept .showreel-toggle { border-radius: 38px; }
+
+.concept-title {
+  width: var(--text-w);
+  margin: 100px 0 56px;
+  text-align: center;
+}
+
+.case--concept .role { margin-top: 100px; }
+
+/* ------------------------------------------------------------------
    Tablet
 ------------------------------------------------------------------- */
 
 @media (max-width: 1100px) {
   :root { --phone-gap: 32px; --page-pad: 32px; }
   .screens--5 { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+  .screens--steps { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+  .screens--steps figcaption { font-size: 16px; gap: 16px; }
+  .sonya { grid-template-columns: clamp(200px, 30vw, 364px) minmax(0, 1fr); }
+  .sonya-photo { width: 100%; }
+  .sonya-name { font-size: clamp(56px, 9vw, 100px); margin-top: 12%; margin-left: -12%; }
+  .sonya-about { font-size: 20px; }
+  .concept-text p { font-size: 20px; }
 }
 
 /* ------------------------------------------------------------------
@@ -474,7 +623,8 @@ figcaption { margin-bottom: 16px; }
 
   .screens--3,
   .screens--2,
-  .screens--5 {
+  .screens--5,
+  .screens--steps {
     grid-template-columns: none;
     grid-auto-flow: column;
     grid-auto-columns: min(72vw, 300px);
@@ -491,6 +641,23 @@ figcaption { margin-bottom: 16px; }
   .screens > * { scroll-snap-align: start; }
 
   .screens--1 { grid-template-columns: min(72vw, 300px); }
+
+  /* concept */
+  .case--concept .badge { margin-bottom: 56px; }
+  .concept-text, .concept-steps { margin-bottom: 64px; }
+  .concept-text p, .sonya-about, .note--lg { font-size: 18px; }
+  .concept-steps { width: 100%; }
+  .concept-steps h3 { padding-inline: var(--page-pad); }
+  .screens--steps { grid-auto-columns: min(60vw, 240px); padding-inline: var(--page-pad); }
+  .screens--steps figcaption { font-size: 16px; }
+  .sonya { grid-template-columns: 1fr; margin-bottom: 40px; }
+  .sonya-photo { grid-row: auto; width: min(72vw, 300px); }
+  .sonya-name { grid-column: 1; margin: -48px 0 12px 12px; font-size: clamp(44px, 14vw, 64px); }
+  .sonya-about { grid-column: 1; }
+  .showreel--concept { border-radius: 16px; aspect-ratio: 1 / 1.1; }
+  .showreel--concept .showreel-video { height: 88%; border-radius: 12cqw; }
+  .concept-title { margin: 64px 0 32px; }
+  .case--concept .role { margin-top: 64px; }
 
   /* club: captions move onto each phone, the shared column labels go away */
   .only-mobile { display: block; }
@@ -529,6 +696,7 @@ figcaption { margin-bottom: 16px; }
     opacity 0.7s ease,
     transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
+.js .reveal { transition-delay: calc(var(--d, 0) * 120ms); }
 .js .reveal.is-visible { opacity: 1; transform: none; }
 
 /* ------------------------------------------------------------------
