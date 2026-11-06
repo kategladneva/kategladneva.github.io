@@ -233,6 +233,9 @@ figcaption { margin-bottom: 16px; }
   height: auto;
   border-radius: 0;
 }
+/* full-length variant: the whole screen is shown, no inner scrolling */
+.scroll-phone--full { aspect-ratio: auto; overflow: hidden; }
+
 .scroll-phone:focus-visible {
   outline: 2px solid #fff;
   outline-offset: 3px;
