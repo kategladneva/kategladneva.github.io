@@ -1,0 +1,48 @@
+/* Concept case page (loaded after styles.css) */
+
+.concept-page {
+  /* same side padding and content width as the loyalty case page */
+  --lp-pad: clamp(20px, 4.7vw, 90px);
+  --text-w: calc(100% - 2 * var(--lp-pad));
+  padding-bottom: 24px;
+}
+.concept-page .screens--steps { justify-content: start; }
+
+.cp-nav {
+  position: absolute;
+  top: 28px;
+  left: var(--lp-pad);
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--paper-muted);
+}
+.cp-nav a:hover { color: var(--white); }
+
+.cp-title {
+  width: var(--text-w);
+  margin: calc(8px + clamp(32px, 3vw, 62px)) 0 110px;
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(52px, 7.3vw, 140px);
+  line-height: 1;
+  color: var(--white);
+}
+
+.concept-page .note--lg { margin-top: 0; }
+.concept-page .concept-title { margin: 100px 0 56px; }
+
+.cp-foot {
+  width: var(--text-w);
+  margin-top: 143px;
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--paper-muted);
+}
+.cp-foot a:hover { color: var(--white); }
+
+@media (max-width: 760px) {
+  .cp-title { margin: calc(8px + 32px) 0 56px; }
+  .concept-page .note--lg { margin-top: 0; }
+  .concept-page .concept-title { margin: 64px 0 32px; }
+  .cp-foot { margin-top: 80px; }
+}

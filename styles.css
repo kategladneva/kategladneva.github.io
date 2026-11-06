@@ -458,13 +458,14 @@ figcaption { margin-bottom: 16px; }
   line-height: 1.2;
   letter-spacing: -0.01em;
   text-decoration: none;
+  cursor: pointer;
   transition: background-color 0.25s ease, color 0.25s ease;
 }
 .case-btn:focus-visible { background: var(--white); color: var(--black); outline-offset: 4px; }
 @media (hover: hover) {
   .case-btn:hover { background: var(--white); color: var(--black); text-decoration: none; }
 }
-.case--club .case-btn-wrap + .role { margin-top: 77px; }
+.case .case-btn-wrap + .role { margin-top: 77px; }
 .case--club .role { margin-top: 96px; }
 
 /* ------------------------------------------------------------------
@@ -473,7 +474,7 @@ figcaption { margin-bottom: 16px; }
 
 .case--concept { --text-w: min(1273px, calc(100% - 2 * var(--page-pad))); }
 
-.case--concept .badge { margin-bottom: 83px; }
+.case--concept .badge { margin-bottom: 0; }
 
 .concept-text,
 .concept-steps {
@@ -575,6 +576,7 @@ figcaption { margin-bottom: 16px; }
 }
 
 .note--lg { margin-top: 0; margin-bottom: 24px; font-size: 16px; }
+.case--concept .note--lg { margin-top: 74px; }
 
 .showreel--concept {
   width: min(1199px, calc(100% - 2 * var(--page-pad)));
@@ -603,7 +605,7 @@ figcaption { margin-bottom: 16px; }
 
 .concept-title {
   width: var(--text-w);
-  margin: 100px 0 56px;
+  margin: 68px 0 56px;
   text-align: center;
 }
 
@@ -633,7 +635,7 @@ figcaption { margin-bottom: 16px; }
   :root { --page-pad: 20px; }
   .case-btn-wrap { align-self: stretch; width: auto; margin: 64px 16px 0; }
   .case-btn { font-size: 24px; }
-  .case--club .case-btn-wrap + .role { margin-top: 56px; }
+  .case .case-btn-wrap + .role { margin-top: 56px; }
 
   .intro-meta, .contacts { top: 24px; right: 20px; }
   .cv-download { font-size: 14px; }
@@ -683,7 +685,8 @@ figcaption { margin-bottom: 16px; }
   .sonya-about { grid-column: 1; }
   .showreel--concept { margin-top: 0; border-radius: 16px; aspect-ratio: 1 / 1.1; }
   .showreel--concept .showreel-video { height: 88%; border-radius: 12cqw; }
-  .concept-title { margin: 64px 0 32px; }
+  .concept-title { margin: 48px 0 32px; }
+  .case--concept .note--lg { margin-top: 40px; }
   .case--concept .role { margin-top: 64px; }
 
   /* club: captions move onto each phone, the shared column labels go away */
