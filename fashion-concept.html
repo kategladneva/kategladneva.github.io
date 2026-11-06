@@ -152,5 +152,19 @@
       videos.forEach(function (v) { vo.observe(v); });
     })();
   </script>
+  <script>
+    /* "Back to portfolio": return to the previous history entry so the scroll position on the main page is kept */
+    document.addEventListener("click", function (e) {
+      var a = e.target.closest && e.target.closest('a[href="./"]');
+      if (!a || e.defaultPrevented || e.button || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      try {
+        var r = new URL(document.referrer);
+        if (r.origin === location.origin && /(\/|\/index\.html)$/.test(r.pathname) && history.length > 1) {
+          e.preventDefault();
+          history.back();
+        }
+      } catch (err) {}
+    });
+  </script>
 </body>
 </html>
