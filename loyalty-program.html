@@ -22,6 +22,12 @@
     // show the clean address (no .html) even if the page was opened with it
     try { if (location.protocol.indexOf("http") === 0 && /\.html$/.test(location.pathname)) { history.replaceState(null, "", location.pathname.replace(/\.html$/, "") + location.search + location.hash); } } catch (e) {}
   </script>
+  <script>
+    /* Microsoft Clarity analytics (only on the live site, not in local previews) */
+    if (/\.github\.io$/.test(location.hostname)) {
+      (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","zay5hi9ajr");
+    }
+  </script>
 </head>
 <body class="lp-body">
   <div class="lp">
@@ -207,17 +213,11 @@
     })();
   </script>
   <script>
-    /* "Back to portfolio": return to the previous history entry so the scroll position on the main page is kept */
+    /* "Back to portfolio": mark the return so the main page restores its scroll position */
     document.addEventListener("click", function (e) {
       var a = e.target.closest && e.target.closest('a[href="./"]');
-      if (!a || e.defaultPrevented || e.button || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-      try {
-        var r = new URL(document.referrer);
-        if (r.origin === location.origin && /(\/|\/index\.html)$/.test(r.pathname) && history.length > 1) {
-          e.preventDefault();
-          history.back();
-        }
-      } catch (err) {}
+      if (!a) return;
+      try { sessionStorage.setItem("portfolio-return", "1"); } catch (err) {}
     });
   </script>
 </body>
