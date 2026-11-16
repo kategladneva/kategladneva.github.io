@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI products — Ekaterina Gladneva</title>
+  <meta name="description" content="Case study: Lamoda's AI virtual try-on and virtual wardrobe — from the initial idea to the rollout to 100% of users.">
+  <meta property="og:title" content="AI products — Ekaterina Gladneva">
+  <meta property="og:description" content="Case study: Lamoda's AI virtual try-on and virtual wardrobe.">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://kategladneva.github.io/social-preview.jpg">
+  <meta property="og:url" content="https://kategladneva.github.io/ai-products">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,400&family=Onest:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="loyalty.css">
+  <link rel="stylesheet" href="ai.css">
+  <script>document.documentElement.classList.add("js")</script>
+  <script>
+    // show the clean address (no .html) even if the page was opened with it
+    try { if (location.protocol.indexOf("http") === 0 && /\.html$/.test(location.pathname)) { history.replaceState(null, "", location.pathname.replace(/\.html$/, "") + location.search + location.hash); } } catch (e) {}
+  </script>
+  <script>
+    /* Microsoft Clarity analytics (only on the live site, not in local previews) */
+    if (/\.github\.io$/.test(location.hostname)) {
+      (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","zay5hi9ajr");
+    }
+  </script>
+</head>
+<body class="lp-body">
+  <div class="lp">
+
+    <nav class="lp-nav"><a href="./">← Portfolio</a></nav>
+
+    <main>
+      <header class="lp-head">
+        <h1 class="lp-title reveal">AI products</h1>
+      </header>
+
+      <!-- Virtual try-on -->
+      <section class="ai-section" aria-labelledby="ai-try-on">
+        <div class="ai-col">
+          <div class="lp-block ai-text reveal">
+            <h2 id="ai-try-on">Virtual try-on</h2>
+            <p>Products are often returned because they look or fit differently than customers expected. To reduce returns, Lamoda developed its own AI try-on technology. It allows users to see how an item will look on them before placing an order.</p>
+            <p>My role: Lead Product Designer. I led two stages of the project, from the initial idea to the rollout to 100% of users. I worked with the Product Lead, Product Director, Art Director, data analysts, developers, marketing team, and Motion Designer.</p>
+            <p>Stage 1. Trying on individual items<br>The first version of the feature supported tops and dresses. A designer under my supervision designed the entire try-on flow and onboarding. The onboarding was important to help users discover the new feature and start using it. AI try-on was an unfamiliar experience, and without an explanation, very few users would have found it.</p>
+            <p>Stage 2. Trying on a complete outfit<br>Next, we introduced the ability to try on a complete outfit instead of just one item. The flow was based on the solutions from the first stage. Users who had already tried individual items could follow a familiar journey without having to learn how to use the feature again.</p>
+            <p>Further development<br>The next step is to introduce virtual try-on based on users' body measurements to show how clothes fit more accurately.</p>
+          </div>
+          <div class="lp-block ai-text reveal">
+            <h2>Results</h2>
+            <ul class="lp-list">
+              <li>1M+ monthly active users and 400K SKUs (85% of the catalog)</li>
+              <li>Increased user engagement by 40%</li>
+              <li>Rolled out to 100% of users</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="lp-mvp lp-mvp--4 ai-shots lp-grid">
+          <figure>
+            <div class="phone-stack">
+              <img src="img/ai-case-try-on@2x.webp" width="750" height="1624" alt="Product page with the virtual try-on banner" loading="lazy">
+              <div class="try-on-banner" aria-hidden="true">
+                <video class="loop-video" src="video/try-on-banner.mp4" muted loop playsinline preload="metadata"></video>
+                <span class="try-on-banner__title">Онлайн-примерка</span>
+                <span class="try-on-banner__text">Загрузите свое фото, и мы покажем вещь на вас</span>
+                <svg class="try-on-banner__close" viewBox="0 0 16.02 16.02"><path transform="translate(2.434 2.434)" fill="#fff" d="M10.918 0.236L11.153 0.473L6.049 5.576L11.153 10.682L10.918 10.918L10.682 11.153L5.576 6.049L0.473 11.153L0.236 10.918L0 10.682L5.104 5.576L0 0.473L0.473 0L5.576 5.104L10.682 0L10.918 0.236Z"/></svg>
+                <span class="try-on-banner__button">
+                  <svg viewBox="0 0 14.54 14.54"><path fill="#000" d="M9.093 5.444L14.537 6.806L14.421 7.269L14.537 7.731L9.091 9.093L7.731 14.537L7.269 14.421L7.268 14.421L6.806 14.537L5.444 9.093L0 7.731L0.115 7.268L0 6.806L5.443 5.444L6.805 0L7.268 0.115L7.731 0L9.093 5.444ZM6.23 6.23L2.08 7.268L6.23 8.306L7.268 12.456L8.306 8.306L12.456 7.268L8.306 6.23L7.268 2.08L6.23 6.23Z"/></svg>
+                  Примерить онлайн
+                </span>
+              </div>
+            </div>
+          </figure>
+          <figure>
+            <img src="img/ai-case-try-on-intro@2x.webp" width="750" height="1624" alt="Try-on intro: add your photo" loading="lazy">
+          </figure>
+          <figure>
+            <video class="ai-video loop-video" width="750" height="1626"
+                   src="video/ai-try-on-loading.mp4" poster="video/ai-try-on-loading-poster.jpg"
+                   muted loop playsinline preload="metadata"
+                   aria-label="Try-on loading: the photo is processed while the user waits"></video>
+          </figure>
+          <figure>
+            <img src="img/ai-case-try-on-result@2x.webp" width="750" height="1624" alt="Try-on result: the item shown on the user's photo" loading="lazy">
+          </figure>
+        </div>
+      </section>
+
+      <!-- Virtual wardrobe -->
+      <section class="ai-section" aria-labelledby="ai-wardrobe">
+        <div class="ai-col">
+          <div class="lp-block ai-text--wide reveal">
+            <h2 id="ai-wardrobe">Virtual wardrobe</h2>
+            <p>Based on quantitative and qualitative research, we know that users want to look good in the clothes they buy. But there are several barriers that make this difficult:<br>
+              1. It's not clear what to wear with a new item<br>
+              The main concern when buying something is: “I'll buy it, but I won't have anything to wear it with.” The wardrobe helps users create outfits by combining a new item with clothes they already own.<br>
+              2. Buying duplicates<br>
+              Users can see when they already own something similar. This helps reduce impulse purchases that they might regret later.<br>
+              3. It's hard to put outfits together every day<br>
+              How can users get ready quickly and still look good?<br>
+              4. No clear overview of the wardrobe<br>
+              Users can see which items are missing, which colors and styles they wear most, and what they haven't worn for a long time.</p>
+            <p>For the business, the key benefits are:<br>
+              1. Engagement and retention<br>
+              Users have a reason to open the app beyond shopping.<br>
+              2. Fewer returns<br>
+              Users can understand in advance whether an item will fit into their existing wardrobe.<br>
+              3. Higher average order value and cross-selling<br>
+              Recommendations like “These jeans would look great with...” are based on the actual items users own.</p>
+            <p>Lamoda has something that standalone wardrobe apps don't: users' purchase history and automatic outfit creation. This became the foundation of our solution.<br>
+              Research gave us two key insights:<br>
+              • Digitizing clothes is a barrier. Adding an entire wardrobe manually takes a lot of time, and most users give up at this stage. We fill the wardrobe automatically using purchase history.<br>
+              • Visual appeal matters. Users want to enjoy looking at their wardrobe, not just scroll through a list of products. This made visual presentation an important part of the design.</p>
+            <p>What was done:<br>
+              1. Analyzed wardrobe apps in Russia and other countries<br>
+              2. Identified the key value for users and built the product flows around it<br>
+              3. Designed easy-to-use navigation that could support future growth<br>
+              4. Presented the wardrobe concept to the Product Director<br>
+              5. Broke the concept down into clear stages for implementation</p>
+          </div>
+          <div class="lp-block ai-text reveal">
+            <h2>Results</h2>
+            <ul class="lp-list">
+              <li>The wardrobe was rolled out to 100% of users.</li>
+              <li>Wardrobe views and user retention grew month over month. Users who use the wardrobe also show an increase in average order value.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="lp-mvp lp-mvp--3 ai-shots ai-shots--outlined lp-grid">
+          <figure><img src="img/ai-case-wardrobe-onb-1@2x.webp" width="750" height="1624" alt="Wardrobe onboarding: there is always something to wear" loading="lazy"></figure>
+          <figure><img src="img/ai-case-wardrobe-onb-2@2x.webp" width="750" height="1624" alt="Wardrobe onboarding: getting ready for an event is easy" loading="lazy"></figure>
+          <figure><img src="img/ai-case-wardrobe-onb-3@2x.webp" width="750" height="1624" alt="Wardrobe onboarding: discover new combinations" loading="lazy"></figure>
+        </div>
+        <div class="lp-mvp lp-mvp--3 ai-shots lp-grid">
+          <figure><img src="img/ai-case-wardrobe-1@2x.webp" width="750" height="1624" alt="Wardrobe: outfits tab" loading="lazy"></figure>
+          <figure><img src="img/ai-case-wardrobe-2@2x.webp" width="750" height="1624" alt="Wardrobe: my items by category" loading="lazy"></figure>
+          <figure><img src="img/ai-case-wardrobe-3@2x.webp" width="750" height="1624" alt="Creating an outfit from wardrobe items" loading="lazy"></figure>
+        </div>
+      </section>
+    </main>
+
+    <footer class="lp-foot"><a href="./">← Back to portfolio</a></footer>
+  </div>
+
+  <script>
+    (function () {
+      var groups = document.querySelectorAll(".lp-grid, .reveal");
+      groups.forEach(function (g) {
+        if (g.classList.contains("lp-grid")) {
+          Array.prototype.forEach.call(g.children, function (el, i) { el.style.setProperty("--i", i); });
+        }
+      });
+      if (!("IntersectionObserver" in window)) {
+        groups.forEach(function (g) { g.classList.add("is-visible"); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting || e.boundingClientRect.bottom < 0) {
+            e.target.classList.add("is-visible");
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      groups.forEach(function (g) { io.observe(g); });
+    })();
+
+    // Looping videos: play only while on screen; respect reduced motion (same as the landing)
+    (function () {
+      var videos = document.querySelectorAll(".loop-video");
+      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (reduce) {
+        videos.forEach(function (v) { if (v.classList.contains("ai-video")) v.controls = true; });
+        return;
+      }
+      if (!("IntersectionObserver" in window)) {
+        videos.forEach(function (v) { v.autoplay = true; v.play().catch(function () {}); });
+        return;
+      }
+      var vo = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.play().catch(function () {}); }
+          else { e.target.pause(); }
+        });
+      }, { threshold: 0.25 });
+      videos.forEach(function (v) { vo.observe(v); });
+    })();
+  </script>
+  <script>
+    /* "Back to portfolio": mark the return so the main page restores its scroll position */
+    document.addEventListener("click", function (e) {
+      var a = e.target.closest && e.target.closest('a[href="./"]');
+      if (!a) return;
+      try { sessionStorage.setItem("portfolio-return", "1"); } catch (err) {}
+    });
+  </script>
+</body>
+</html>

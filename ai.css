@@ -1,0 +1,30 @@
+/* AI products case page (loaded after styles.css and loyalty.css) */
+
+/* comfortable measure: ~65 characters per line (48ch ≈ 730px at 24px) */
+.ai-text, .ai-text--wide { width: 100%; }
+.ai-text p, .ai-text--wide p, .ai-text .lp-list { max-width: 48ch; }
+.ai-col { display: flex; flex-direction: column; gap: clamp(48px, 4.2vw, 80px); margin-top: clamp(48px, 5.7vw, 110px); }
+.ai-section + .ai-section { margin-top: clamp(72px, 5.2vw, 100px); }
+.ai-section:last-of-type { padding-bottom: clamp(100px, 10vw, 190px); }
+
+/* phone rows: 375px phones, 32px gaps, left-aligned like the design */
+.ai-shots { margin-top: clamp(32px, 3.1vw, 60px); justify-content: start; }
+.ai-shots + .ai-shots { margin-top: clamp(24px, 3.1vw, 60px); }
+
+/* 38px corners at 375px, scaled with the column */
+.ai-shots img,
+.ai-shots .ai-video { display: block; width: 100%; height: auto; border-radius: 10.13cqi; }
+.ai-shots .ai-video { aspect-ratio: 375 / 812; object-fit: cover; background: #ddd; }
+.ai-shots--outlined img { box-shadow: 0 0 0 1px #333; }
+
+/* try-on screen with the live banner (markup and banner styles shared with the landing) */
+.ai-shots .phone-stack { overflow: hidden; border-radius: 10.13cqi; background: #fff; }
+.ai-shots .phone-stack > img { border-radius: 0; }
+
+/* banner geometry for this page's 375px screen: 251.77 x 133.52, flush right, 213.62 from the top */
+.ai-shots .try-on-banner {
+  --u: calc(100cqi / 375);
+  left: auto;
+  right: 0;
+  top: calc(var(--u) * 213.62);
+}
