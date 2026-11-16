@@ -2,7 +2,9 @@
 
 /* comfortable measure: ~65 characters per line (48ch ≈ 730px at 24px) */
 .ai-text, .ai-text--wide { width: 100%; }
-.ai-text p, .ai-text--wide p, .ai-text .lp-list { max-width: 48ch; }
+.ai-text p, .ai-text--wide p, .ai-text .lp-list, .ai-text--wide .lp-list { max-width: 48ch; }
+/* a list that continues the paragraph above it (no paragraph gap) */
+.lp-block p + .ai-list-tight { margin-top: 4px; }
 .ai-col { display: flex; flex-direction: column; gap: clamp(48px, 4.2vw, 80px); margin-top: clamp(48px, 5.7vw, 110px); }
 .ai-section + .ai-section { margin-top: clamp(72px, 5.2vw, 100px); }
 .ai-section:last-of-type { padding-bottom: clamp(100px, 10vw, 190px); }
