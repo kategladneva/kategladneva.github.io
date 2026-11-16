@@ -30,3 +30,36 @@
   right: 0;
   top: calc(var(--u) * 213.62);
 }
+
+/* halftone art in the top-right corner (1016 x 1304 at 1920, flush right and top) */
+.ai-page { position: relative; }
+.ai-page > :not(.ai-bg) { position: relative; z-index: 1; }
+.ai-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 0;
+  width: 52.92vw;
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+}
+.js .ai-bg { opacity: 0; transition: opacity 1.2s ease; }
+.js .ai-bg.is-loaded { opacity: 1; }
+
+/* paragraph that follows a list as part of the same thought */
+.lp-block .ai-list-tight + p.ai-tight { margin-top: 8px; }
+
+/* narrower screens: keep the art to the right of the ~65-character text column, fade its lower edge */
+@media (max-width: 1280px) {
+  .ai-bg {
+    width: min(52.92vw, max(240px, calc(100vw - 680px)));
+    -webkit-mask-image: linear-gradient(to bottom, #000 40%, transparent 90%);
+            mask-image: linear-gradient(to bottom, #000 40%, transparent 90%);
+  }
+}
+/* phones: text spans the full width, so the art sits behind the title, softer */
+@media (max-width: 760px) {
+  .ai-bg { width: 46vw; }
+  .js .ai-bg.is-loaded { opacity: 0.55; }
+}

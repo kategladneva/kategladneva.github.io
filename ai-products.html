@@ -31,7 +31,8 @@
   </script>
 </head>
 <body class="lp-body">
-  <div class="lp">
+  <div class="lp ai-page">
+    <img class="ai-bg" src="img/ai-case-bg-dots@2x.webp" width="2032" height="2608" alt="" aria-hidden="true" fetchpriority="high">
 
     <nav class="lp-nav"><a href="./">← Portfolio</a></nav>
 
@@ -97,34 +98,34 @@
         <div class="ai-col">
           <div class="lp-block ai-text--wide reveal">
             <h2 id="ai-wardrobe">Virtual wardrobe</h2>
-            <p>Based on quantitative and qualitative research, we know that users want to look good in the clothes they buy. But there are several barriers that make this difficult:<br>
-              1. It's not clear what to wear with a new item<br>
-              The main concern when buying something is: “I'll buy it, but I won't have anything to wear it with.” The wardrobe helps users create outfits by combining a new item with clothes they already own.<br>
-              2. Buying duplicates<br>
-              Users can see when they already own something similar. This helps reduce impulse purchases that they might regret later.<br>
-              3. It's hard to put outfits together every day<br>
-              How can users get ready quickly and still look good?<br>
-              4. No clear overview of the wardrobe<br>
-              Users can see which items are missing, which colors and styles they wear most, and what they haven't worn for a long time.</p>
-            <p>For the business, the key benefits are:<br>
-              1. Engagement and retention<br>
-              Users have a reason to open the app beyond shopping.<br>
-              2. Fewer returns<br>
-              Users can understand in advance whether an item will fit into their existing wardrobe.<br>
-              3. Higher average order value and cross-selling<br>
-              Recommendations like “These jeans would look great with...” are based on the actual items users own.</p>
-            <p>Lamoda has something that standalone wardrobe apps don't: users' purchase history and automatic outfit creation. This became the foundation of our solution.<br>
-              Research gave us two key insights:</p>
+            <p>Research showed that users want to look good in the clothes they buy, but four barriers get in the way:<br>
+              1. Not knowing what to wear it with.<br>
+              “I’ll buy it, but I won’t have anything to wear it with.” The wardrobe lets users build outfits from new items and clothes they already own.<br>
+              2. Buying duplicates.<br>
+              Users see when they already own something similar, so they make fewer impulse purchases they regret later.<br>
+              3. Getting dressed every day.<br>
+              Users struggle to put an outfit together quickly and still look good.<br>
+              4. No overview of the wardrobe.<br>
+              Users can see what’s missing, which colors and styles they wear most, and what they haven’t worn in a while.</p>
+            <p>For the business:</p>
             <ul class="lp-list ai-list-tight">
-              <li>Digitizing clothes is a barrier. Adding an entire wardrobe manually takes a lot of time, and most users give up at this stage. We fill the wardrobe automatically using purchase history.</li>
-              <li>Visual appeal matters. Users want to enjoy looking at their wardrobe, not just scroll through a list of products. This made visual presentation an important part of the design.</li>
+              <li>Engagement and retention. Users have a reason to open the app beyond shopping.</li>
+              <li>Fewer returns. Users know in advance whether a new item fits their wardrobe.</li>
+              <li>Higher AOV and cross-selling. Recommendations are based on items users actually own.</li>
             </ul>
-            <p>What was done:<br>
-              1. Analyzed wardrobe apps in Russia and other countries<br>
-              2. Identified the key value for users and built the product flows around it<br>
-              3. Designed easy-to-use navigation that could support future growth<br>
-              4. Presented the wardrobe concept to the Product Director<br>
-              5. Broke the concept down into clear stages for implementation</p>
+            <p class="ai-tight">Our advantage. Lamoda has two things standalone wardrobe apps don’t: users’ purchase history and automatic outfit creation. We built the solution on these two strengths, guided by two research insights:</p>
+            <ul class="lp-list ai-list-tight">
+              <li>Manual digitizing kills adoption. Most users give up before adding all their clothes, so we fill the wardrobe automatically from purchases.</li>
+              <li>Visual appeal matters. Users want a wardrobe they enjoy looking at, not a product list, so visual presentation became a core design requirement.</li>
+            </ul>
+            <p>What we did</p>
+            <ul class="lp-list ai-list-tight">
+              <li>Analyzed wardrobe apps in Russia and abroad</li>
+              <li>Defined the core user value and built the flows around it</li>
+              <li>Designed navigation that can grow with the product</li>
+              <li>Presented the concept to the Product Director</li>
+              <li>Split the concept into implementation stages</li>
+            </ul>
           </div>
           <div class="lp-block ai-text reveal">
             <h2>Results</h2>
@@ -151,6 +152,15 @@
     <footer class="lp-foot"><a href="./">← Back to portfolio</a></footer>
   </div>
 
+  <script>
+    // halftone art: soft fade-in once loaded
+    (function () {
+      var bg = document.querySelector(".ai-bg");
+      if (!bg) return;
+      function show() { bg.classList.add("is-loaded"); }
+      if (bg.complete) show(); else { bg.addEventListener("load", show); bg.addEventListener("error", show); }
+    })();
+  </script>
   <script>
     (function () {
       var groups = document.querySelectorAll(".lp-grid, .reveal");
