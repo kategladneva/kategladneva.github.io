@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Redesign catalog — Ekaterina Gladneva</title>
+  <meta name="description" content="Case study: product improvements to Lamoda's catalog — category navigation, product cards and tab bar, validated with four A/B tests.">
+  <meta property="og:title" content="Redesign catalog — Ekaterina Gladneva">
+  <meta property="og:description" content="Case study: product improvements to Lamoda's catalog.">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://kategladneva.github.io/social-preview.jpg">
+  <meta property="og:url" content="https://kategladneva.github.io/redesign-catalog">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,400&family=Onest:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="loyalty.css">
+  <link rel="stylesheet" href="catalog.css">
+  <script>document.documentElement.classList.add("js")</script>
+  <script>
+    // show the clean address (no .html) even if the page was opened with it
+    try { if (location.protocol.indexOf("http") === 0 && /\.html$/.test(location.pathname)) { history.replaceState(null, "", location.pathname.replace(/\.html$/, "") + location.search + location.hash); } } catch (e) {}
+  </script>
+  <script>
+    /* Microsoft Clarity analytics (only on the live site, not in local previews) */
+    if (/\.github\.io$/.test(location.hostname)) {
+      (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","zay5hi9ajr");
+    }
+  </script>
+</head>
+<body class="lp-body">
+  <div class="lp">
+
+    <nav class="lp-nav"><a href="./">← Portfolio</a></nav>
+
+    <main>
+      <header class="lp-head">
+        <h1 class="lp-title reveal">Redesign catalog</h1>
+      </header>
+
+      <section class="lp-intro cc-intro">
+        <div class="lp-col">
+          <div class="lp-block reveal">
+            <h2>Introduction</h2>
+            <p>As part of the app redesign, I also worked on product improvements to the catalog.<br>I independently defined development tasks, planned and ran A/B tests, analyzed the results together with data analysts, and rolled out successful changes to 100% of users in agreement with the Catalog Product Owner.</p>
+          </div>
+          <div class="lp-block reveal">
+            <h2>My hypotheses</h2>
+            <ul class="lp-list">
+              <li>Users found it difficult to browse categories horizontally. I noticed this during user interviews</li>
+              <li>Showing three prices at once created too much cognitive load when choosing a product</li>
+              <li>Did users really need to see available sizes at this stage? I planned to test removing them through an A/B test</li>
+              <li>The cart and profile icons were in unfamiliar positions. Users could accidentally cover the cart with their finger and forget about it while using the app</li>
+              <li>The active tab icon did not clearly show which section was selected</li>
+            </ul>
+          </div>
+          <div class="lp-block reveal">
+            <h2>What I did</h2>
+            <ul class="lp-list">
+              <li>Added a “All” button when there were too many categories, allowing users to select a category from a separate list</li>
+              <li>Changed the category colors and worked with a developer to create a new component</li>
+              <li>Ran a negative A/B test to check whether we could remove sizes from the catalog. We received many complaints in the App Store, so I stopped the test</li>
+              <li>Reduced the number of displayed prices from three to two, increased their font size, and added the ruble symbol</li>
+              <li>Improved the typography and spacing of product cards</li>
+              <li>Designed new badges and defined their display order</li>
+              <li>Changed the tab bar layout: moved the cart to the center and the profile to the right</li>
+              <li>Redesigned all tab bar icons</li>
+            </ul>
+          </div>
+          <div class="lp-block reveal">
+            <h2>Results</h2>
+            <ul class="lp-list">
+              <li>I ran four A/B tests covering category navigation, product cards, and tab bar changes to measure the impact of each change separately</li>
+              <li>Users became more active in selecting product categories. Although the A/B test results were inconclusive, we kept the new functionality because it made category navigation more convenient</li>
+              <li>Product page visits increased, partly thanks to changes to prices and sizes. NMV grew by 0.8%</li>
+              <li>Cart visits increased by 2%</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cc-shots">
+          <div class="cc-pair lp-grid">
+            <figure>
+              <figcaption>Before</figcaption>
+              <img src="img/catalog-case-before@2x.webp" width="824" height="1784" alt="Catalog before the redesign: colored category chips, three prices and sizes on product cards" loading="lazy">
+            </figure>
+            <figure>
+              <figcaption>After</figcaption>
+              <img src="img/catalog-case-after@2x.webp" width="824" height="1784" alt="Catalog after the redesign: an All button, filter chips, two larger prices and a new tab bar" loading="lazy">
+            </figure>
+          </div>
+          <div class="cc-menu lp-grid">
+            <figure>
+              <figcaption>Category menu</figcaption>
+              <img src="img/catalog-case-menu@2x.webp" width="824" height="1784" alt="Category menu opened from the All button: a list of clothing categories with icons" loading="lazy">
+            </figure>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="lp-foot"><a href="./">← Back to portfolio</a></footer>
+  </div>
+
+  <script>
+    (function () {
+      var groups = document.querySelectorAll(".lp-grid, .reveal");
+      groups.forEach(function (g) {
+        if (g.classList.contains("lp-grid")) {
+          Array.prototype.forEach.call(g.children, function (el, i) { el.style.setProperty("--i", i); });
+        }
+      });
+      if (!("IntersectionObserver" in window)) {
+        groups.forEach(function (g) { g.classList.add("is-visible"); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting || e.boundingClientRect.bottom < 0) {
+            e.target.classList.add("is-visible");
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      groups.forEach(function (g) { io.observe(g); });
+    })();
+  </script>
+  <script>
+    /* "Back to portfolio": mark the return so the main page restores its scroll position */
+    document.addEventListener("click", function (e) {
+      var a = e.target.closest && e.target.closest('a[href="./"]');
+      if (!a) return;
+      try { sessionStorage.setItem("portfolio-return", "1"); } catch (err) {}
+    });
+  </script>
+</body>
+</html>
