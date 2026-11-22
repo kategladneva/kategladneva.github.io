@@ -61,6 +61,9 @@ a { color: inherit; text-decoration: none; }
 /* red2: left, behind the start of step 2 (x -328, y 1344 at 1512 = 516px above step 2);
    positioned from the page edge, so subtract the step's own left offset */
 .cs-glow--mid { left: calc(-21.69vw - max(var(--pad-x), (100vw - 1356px) / 2)); top: -34.13vw; }
+/* red3: centred on the page around «Флоу выбора» (x -5, y 5316 at 1512 = 8px above the sub-section) */
+.cs-sub--glow { position: relative; }
+.cs-glow--flow { left: calc(-0.33vw - max(var(--pad-x), (100vw - 1356px) / 2)); top: -0.53vw; }
 
 .cs-nav {
   position: absolute;
@@ -101,6 +104,7 @@ a { color: inherit; text-decoration: none; }
 .cs-step > :not(.cs-glow) + .cs-sub:not(.cs-glow) { margin-top: var(--gap-sub); }
 .cs-step > :not(.cs-glow) + .cs-sub--first:not(.cs-glow) { margin-top: var(--gap); }
 .cs-sub > .cs-h3 + .cs-text { margin-top: 12px; }
+.cs-sub > .cs-glow + * { margin-top: 0; }
 .cs-sub > * + .cs-row,
 .cs-sub > * + .cs-phone,
 .cs-sub > * + .cs-flow { margin-top: var(--gap); }
@@ -132,7 +136,7 @@ a { color: inherit; text-decoration: none; }
 /* glass captions */
 .cs-note {
   padding: clamp(16px, 1.59vw, 24px);
-  border-radius: 16px;
+  border-radius: 4px;   /* all idea captions: 4px, as in the design */
   background: rgba(255, 255, 255, 0.2);
   -webkit-backdrop-filter: blur(8px);
           backdrop-filter: blur(8px);
