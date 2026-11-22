@@ -100,34 +100,8 @@
 .c1-concepts .c1-concept-2 { border-radius: 16px; }
 .c1-concepts .c1-concept-3 { border-radius: 0; background: none; }
 
-/* ---------- Bottom navigation (like the title page cards) ---------- */
-.c1-nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: clamp(80px, 9.26vw, 140px); }
-.c1-nav a {
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 24px;
-  min-height: clamp(180px, 19.5vw, 295px);
-  padding: 0 clamp(24px, 2.9vw, 44px) clamp(24px, 2.65vw, 40px);
-  border-radius: clamp(24px, 2.12vw, 32px);
-  background: #E9EAF1;
-  color: #000;
-  transition: background-color 0.25s ease;
-}
-.c1-nav__title { max-width: 429px; padding-bottom: 4px; font-size: clamp(32px, 4.23vw, 64px); line-height: 0.9; letter-spacing: -0.01em; }
-.c1-nav__arrow {
-  flex: none; display: grid; place-items: center;
-  width: clamp(48px, 3.97vw, 60px); aspect-ratio: 1;
-  border-radius: 50%; background: #fff;
-  transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
-}
-.c1-nav__arrow svg { width: 26.7%; height: auto; }
-@media (hover: hover) {
-  .c1-nav a:hover { background: #DFE1EB; }
-  .c1-nav a:hover .c1-nav__arrow { transform: translateX(6px); }
-}
-@media (max-width: 720px) { .c1-nav { grid-template-columns: minmax(0, 1fr); gap: 12px; } }
+/* bottom navigation lives in profiru-case2.css (shared); case 1 keeps its larger top gap */
+.c1-nav { margin-top: clamp(80px, 9.26vw, 140px); }
 
 /* arrows: one overlay per diagram — dot on the left end, arrowhead on the right, same S-curve everywhere */
 .dg__arrows { position: absolute; left: 0; top: 0; overflow: visible; pointer-events: none; }
