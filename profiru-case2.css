@@ -41,6 +41,7 @@ a { color: inherit; text-decoration: none; }
   position: relative;
   isolation: isolate;
   overflow: hidden;
+  overflow: clip;          /* clips the glows without breaking position: sticky inside */
   min-height: 100vh;
   padding: var(--pad-top) var(--edge) clamp(100px, 13vw, 197px);
   background: linear-gradient(180deg, #000 -12.41%, #404656 140.5%);

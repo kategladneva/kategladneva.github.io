@@ -129,3 +129,6 @@
 /* below 1180px the phone row gets 4px top padding (scroll room), so subtract it */
 @media (max-width: 1180px) { .cs-intro > :not(.cs-glow) + .c1-hero { margin-top: 36px; } }
 @media (max-width: 720px) { .cs-intro > :not(.cs-glow) + .c1-hero { margin-top: 12px; } }
+
+/* QR rides along the before/after screens while scrolling and stops at their bottom edge */
+.c1-qr { position: sticky; top: 32px; align-self: flex-start; }
