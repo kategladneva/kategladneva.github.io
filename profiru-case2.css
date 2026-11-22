@@ -6,7 +6,9 @@
   --muted: rgba(255, 255, 255, 0.5);
   --red: #E72541;
 
-  --pad-x: clamp(16px, 3.97vw, 60px);        /* 60 at 1512 */
+  --pad-x: clamp(16px, 5.16vw, 78px);        /* 78 at 1512 — same as the logo on the title page */
+  /* left edge: like the title page — 1356px column centred on wide screens */
+  --edge: max(var(--pad-x), calc((100% - 1356px) / 2));
   --pad-top: clamp(72px, 6.08vw, 92px);      /* 92 */
   --gap-step: clamp(64px, 6.6vw, 100px);     /* between steps */
   --gap-sub: clamp(48px, 4.23vw, 64px);      /* between sub-sections */
@@ -40,7 +42,7 @@ a { color: inherit; text-decoration: none; }
   isolation: isolate;
   overflow: hidden;
   min-height: 100vh;
-  padding: var(--pad-top) var(--pad-x) clamp(100px, 13vw, 197px);
+  padding: var(--pad-top) var(--edge) clamp(100px, 13vw, 197px);
   background: linear-gradient(180deg, #000 -12.41%, #404656 140.5%);
 }
 
@@ -60,7 +62,7 @@ a { color: inherit; text-decoration: none; }
 .cs-nav {
   position: absolute;
   top: clamp(16px, 2.1vw, 32px);
-  left: var(--pad-x);
+  left: var(--edge);
   font-size: 16px;
   color: var(--muted);
   transition: color 0.2s ease;
