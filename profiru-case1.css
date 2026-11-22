@@ -123,3 +123,9 @@
   font-family: "CoFo Sans Medium Local", "CoFo Sans", "Onest", system-ui, sans-serif;
   font-weight: 500;
 }
+
+/* hero (before/after + QR): 64px below the intro text */
+.cs-intro > :not(.cs-glow) + .c1-hero { margin-top: 40px; }   /* + 24px intro gap = 64px */
+/* below 1180px the phone row gets 4px top padding (scroll room), so subtract it */
+@media (max-width: 1180px) { .cs-intro > :not(.cs-glow) + .c1-hero { margin-top: 36px; } }
+@media (max-width: 720px) { .cs-intro > :not(.cs-glow) + .c1-hero { margin-top: 12px; } }
