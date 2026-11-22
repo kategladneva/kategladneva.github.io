@@ -110,3 +110,16 @@
 /* source link in step 3 */
 .c1-src { text-decoration: underline; text-underline-offset: 0.18em; text-decoration-thickness: 1px; transition: opacity 0.2s ease; }
 .c1-src:hover { opacity: 0.7; }
+
+/* note titles: CoFo Sans Medium (as in the design). Uses the copy installed on the device;
+   elsewhere falls back to Onest 500, which this page loads from Google Fonts. */
+@font-face {
+  font-family: "CoFo Sans Medium Local";
+  src: local("CoFoSans-Medium"), local("CoFo Sans Medium");
+  font-weight: 500;
+  font-style: normal;
+}
+.note__title {
+  font-family: "CoFo Sans Medium Local", "CoFo Sans", "Onest", system-ui, sans-serif;
+  font-weight: 500;
+}
