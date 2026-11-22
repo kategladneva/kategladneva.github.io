@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Редизайн ленты специалистов — Профи.ру, тестовое задание</title>
+  <meta name="description" content="Кейс для Профи.ру: редизайн экрана выбора специалиста без изменения продуктовой логики.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../profiru-case2.css">
+  <link rel="stylesheet" href="../profiru-case1.css">
+  <script>document.documentElement.classList.add("js")</script>
+  <script>
+    // show the clean address (no .html) even if the page was opened with it
+    try { if (location.protocol.indexOf("http") === 0 && /\.html$/.test(location.pathname)) { history.replaceState(null, "", location.pathname.replace(/\.html$/, "") + location.search + location.hash); } } catch (e) {}
+  </script>
+  <script>
+    /* Microsoft Clarity analytics (only on the live site, not in local previews) */
+    if (/\.github\.io$/.test(location.hostname)) {
+      (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","zay5hi9ajr");
+    }
+  </script>
+</head>
+<body>
+  <main class="cs">
+    <div class="cs-glow c1-glow--top" aria-hidden="true"></div>
+    <a class="cs-nav" href="./">← Назад</a>
+
+    <!-- Intro -->
+    <section class="cs-step cs-intro">
+      <h1 class="cs-h1 reveal">Редизайн ленты специалистов</h1>
+      <div class="cs-text c1-text-wide reveal" style="--d:1">
+        <p><strong>Задача:</strong> улучшить экран выбора специалиста, не меняя продуктовую логику.<br>Сначала покажу итоговое решение, а ниже расскажу, как я к нему пришла.</p>
+      </div>
+      <div class="c1-hero">
+        <div class="c1-pair cs-row">
+          <img src="../img/profiru/c1-before@2x.webp" width="750" height="1624" alt="Экран «Все специалисты» до редизайна">
+          <img src="../img/profiru/c1-after@2x.webp" width="750" height="1624" alt="Экран «Все специалисты» после редизайна">
+        </div>
+        <a class="c1-qr reveal" href="prototipe" style="--d:2">
+          <img src="../img/profiru/c1-qr@2x.png" width="400" height="400" alt="QR-код прототипа">
+          <span>Прототип</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Step 1 -->
+    <section class="cs-step c1-step1" aria-labelledby="step1">
+      <div class="cs-glow c1-glow--mid" aria-hidden="true"></div>
+      <div class="cs-head reveal">
+        <span class="cs-badge">Шаг 1</span>
+        <h2 class="cs-h1" id="step1">Анализ текущего интерфейса</h2>
+      </div>
+      <div class="dg c1-dg1" style="--w:1400;--h:812">
+        <div class="dg__canvas">
+          <img class="c1-phone dg__abs reveal" style="left:509px;top:0" src="../img/profiru/c1-before@2x.webp" width="750" height="1624" alt="Текущий экран «Все специалисты» в приложении Профи.ру" loading="lazy">
+          <div class="dg__col dg__abs" style="left:0;top:40px;width:465px"><div class="note  reveal"><p class="note__title">Фильтры</p><p class="note__text">Для удобства использования списка можно добавить фильтры</p></div><div class="note  reveal"><p class="note__title">Статусы присутствия</p><p class="note__text">Дублирование иконки и текстового описания<br>в одном и том же месте пишется разного рода информация, непредсказуемо. То, что специалист был недавно в сети, как клиенту мне это только говорит о том, что это не «мертвый» аккаунт</p></div><div class="note  reveal"><p class="note__title">Цена</p><p class="note__text">Я не понимала, что значит «Плиточники», в кейсах с психологами увидела, что одинаковые цены дублируются<br>+ занимают много места</p></div><div class="note  reveal"><p class="note__title">Кнопка</p><p class="note__text">Моя гипотеза, что кнопка может восприниматься неактивной</p></div></div>
+          <div class="dg__right dg__abs" style="left:928px;top:84px;width:465px"><div class="note  reveal" style="position:absolute;left:0;top:0px;width:465px"><p class="note__title">Проверка документов</p><p class="note__text">Визуально путается с индикатором «В сети», ставлю под сомнение, что нужно дополнительно писать, что паспорт не проверен</p></div><div class="note  reveal" style="position:absolute;left:0;top:202px;width:465px"><p class="note__title">Отзывы</p><p class="note__text">Разделено на отдельные сущности, хотя это связанные элементы</p></div><div class="note  reveal" style="position:absolute;left:0;top:360px;width:465px"><p class="note__title">Фотографии</p><p class="note__text">Чьи это фото? Портфолио или клиентов?</p></div><div class="note  reveal" style="position:absolute;left:0;top:496px;width:465px"><p class="note__title">Общее</p><p class="note__text">Достаточно большие по высоте карточки, а чем больше мастеров увижу, тем выше вероятность найти своего</p></div></div>
+          <svg class="dg__arrow" viewBox="0 0 172.24 73.59" style="left:751.93px;top:141.26px;width:172.24px;height:73.59px;rotate:-25.97deg"><path d="M0.000 46.985C0.000 46.985 33.410 23.492 33.410 23.492C53.467 9.389 80.205 9.344 100.310 23.378C100.310 23.378 172.241 73.591 172.241 73.591" vector-effect="non-scaling-stroke" fill="none" stroke="#E93B54" stroke-width="1.8" /></svg><svg class="dg__arrow" viewBox="0 0 108.1 59.96" style="left:816.81px;top:432.59px;width:108.1px;height:59.96px;rotate:25.97deg"><g transform="translate(0 59.96) scale(1 -1)"> <path d="M0.000 29.557C0.000 29.557 23.326 14.778 23.326 14.778C36.998 6.116 54.830 7.981 66.415 19.284C66.415 19.284 108.100 59.958 108.100 59.958" vector-effect="non-scaling-stroke" fill="none" stroke="#E93B54" stroke-width="1.8" /> </g></svg><svg class="dg__arrow" viewBox="0 0 212 66.5" style="left:728.50px;top:272.00px;width:212.0px;height:66.5px;rotate:0.0deg"><path d="M0.000 0.000C0.000 0.000 47.500 33.250 47.500 33.250C78.188 54.732 115.447 64.752 152.770 61.562C152.770 61.562 212.000 56.500 212.000 56.500" vector-effect="non-scaling-stroke" fill="none" stroke="#E93B54" stroke-width="1.8" /></svg><svg class="dg__arrow" viewBox="0 0 105.66 74.01" style="left:522.11px;top:449.98px;width:105.66px;height:74.01px;rotate:178.36deg"><path d="M0.000 74.012C0.000 74.012 27.140 30.187 27.140 30.187C37.415 13.596 55.111 3.033 74.591 1.864C74.591 1.864 105.656 -0.000 105.656 -0.000" vector-effect="non-scaling-stroke" fill="none" stroke="#E93B54" stroke-width="1.8" /></svg><svg class="dg__arrow" viewBox="0 0 131.33 40.35" style="left:570.93px;top:288.59px;width:131.33px;height:40.35px;rotate:178.36deg"><path d="M0.000 32.600C0.000 32.600 33.479 16.300 33.479 16.300C54.304 6.161 78.885 7.476 98.509 19.778C98.509 19.778 131.333 40.355 131.333 40.355" vector-effect="non-scaling-stroke" fill="none" stroke="#E93B54" stroke-width="1.8" /></svg><svg class="dg__arrow" viewBox="0 0 120 35.63" style="left:525.46px;top:171.19px;width:120.0px;height:35.63px;rotate:178.36deg"><path d="M0.000 16.193C0.000 16.193 31.744 8.096 31.744 8.096C52.010 2.928 73.510 6.318 91.201 17.472C91.201 17.472 119.996 35.627 119.996 35.627" vector-effect="non-scaling-stroke" fill="none" stroke="#E93B54" stroke-width="1.8" /></svg><svg class="dg__arrow" viewBox="0 0 107.49 85.47" style="left:554.44px;top:654.43px;width:107.49px;height:85.47px;rotate:178.36deg"><path d="M0.000 85.466C0.000 85.466 14.487 51.115 14.487 51.115C23.564 29.590 42.586 13.857 65.432 8.979C65.432 8.979 107.485 0.000 107.485 0.000" vector-effect="non-scaling-stroke" fill="none" stroke="#E93B54" stroke-width="1.8" /></svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- Step 2 -->
+    <section class="cs-step" aria-labelledby="step2">
+      <div class="cs-head reveal">
+        <span class="cs-badge">Шаг 2</span>
+        <h2 class="cs-h1" id="step2">Референсы</h2>
+      </div>
+      <div class="cs-text c1-text-wide reveal">
+        <p>На этом этапе я изучила, как устроен выбор специалиста в российских и зарубежных сервисах. Подходов два. В одних, как на Авито, в центре — услуга: пользователь сравнивает объявления и цены. В других — личность: человек выбирает конкретного мастера по его работам, отзывам и тому, как он общается.<br>Для вашего продукта я предлагаю сохранить и усилить второй подход. Когда речь о ремонте, люди доверяют не услуге, а человеку, который придёт к ним домой. Поэтому выбор должен строиться вокруг мастера: кто он, что уже сделал и что о нём говорят клиенты. По-моему, это напрямую поддерживает позиционирование продукта и отличает его от площадок объявлений.</p>
+      </div>
+      <div class="cs-row">
+        <div class="cs-shot__img"><img src="../img/profiru/c1-ref-1@2x.webp" width="640" height="1388" alt="Референс 1" loading="lazy"></div>
+        <div class="cs-shot__img"><img src="../img/profiru/c1-ref-2@2x.webp" width="640" height="1388" alt="Референс 2" loading="lazy"></div>
+        <div class="cs-shot__img"><img src="../img/profiru/c1-ref-3@2x.webp" width="640" height="1388" alt="Референс 3" loading="lazy"></div>
+        <div class="cs-shot__img"><img src="../img/profiru/c1-ref-4@2x.webp" width="640" height="1388" alt="Референс 4" loading="lazy"></div>
+      </div>
+    </section>
+
+    <!-- Step 3 -->
+    <section class="cs-step" aria-labelledby="step3">
+      <div class="cs-head reveal">
+        <span class="cs-badge">Шаг 3</span>
+        <h2 class="cs-h1" id="step3">Что важно пользователям?</h2>
+      </div>
+      <div class="cs-text c1-text-wide reveal">
+        <p>Чтобы понять, как выстроить информацию в карточке специалиста, я поговорила с пятью людьми, которые недавно делали ремонт, и выяснила, что для них важно при выборе мастера. Главными критериями оказались:<br>1. Отзывы<br>2. Стоимость (негативно относятся к фразе «цена по договоренности»)<br>3. Фотографии<br>4. Как быстро сможет приступить к работе</p>
+        <p><strong>Выявила интересный барьер:</strong><br>— недоверие к фото. «Фотографии можно скачать откуда угодно, не факт, что они принадлежат этому мастеру»</p>
+        <p>Также я опиралась на опрос «Ремонт со СберУслугами». При выборе подрядчика:<br>70% обращают внимание на репутацию и отзывы о ранее сделанных ремонтах — это главный фактор;<br>63% ориентируются на стоимость работы;<br>54% — на гарантии и договор до начала ремонта;<br>53% — на рекомендации знакомых.<br>Источник: опрос «Ремонт со СберУслугами», август 2025, РБК Недвижимость</p>
+      </div>
+    </section>
+
+    <!-- Step 4 -->
+    <section class="cs-step" aria-labelledby="step4">
+      <div class="cs-head reveal">
+        <span class="cs-badge">Шаг 4</span>
+        <h2 class="cs-h1" id="step4">Дизайн карточек</h2>
+      </div>
+      <div class="dg c1-dg4" style="--w:1400;--h:1140">
+        <div class="dg__canvas">
+          <div class="c1-cards dg__abs reveal" style="left:515px;top:0" role="img" aria-label="Новые карточки специалистов">
+            <div class="c1-card">
+              <img src="../img/profiru/c1-card1-head@2x.webp" width="750" height="168" alt="">
+              <img class="c1-badges" src="../img/profiru/c1-card1-badges@2x.webp" width="426" height="80" alt="">
+              <img src="../img/profiru/c1-card1-gallery@2x.webp" width="750" height="368" alt="">
+              <img src="../img/profiru/c1-card1-cta@2x.webp" width="750" height="160" alt="">
+            </div>
+            <div class="c1-card"><img src="../img/profiru/c1-card2@2x.webp" width="750" height="776" alt=""></div>
+            <div class="c1-card"><img src="../img/profiru/c1-card3@2x.webp" width="750" height="696" alt=""></div>
+          </div>
+          <div class="dg__right dg__abs" style="left:5px;top:0;width:466px;height:100%"><div class="note  reveal" style="position:absolute;left:0;top:74px;width:466px"><p class="note__title">Когда был в сети</p><p class="note__text">«20 минут» и «2 часа» визуально почти одинаковы, и выбор от этого не меняется. Эти статусы я трансформировала в «Отвечает за несколько часов» и перенесла в кнопку</p></div><div class="note  reveal" style="position:absolute;left:0;top:293px;width:466px"><p class="note__title">Верификация документов</p><p class="note__text">Визуально отделила от статуса «В сети», если не верифицирован — значка нет.</p></div><div class="note  reveal" style="position:absolute;left:0;top:462px;width:466px"><p class="note__title">Теги</p><p class="note__text">Здесь все особенности Профи. Место стало более удобным и масштабируемым.<br>Предлагаю только 1 акцентный бейдж.<br><br>Тег «Выезжает по городу» — замена станциям метро, от станций сразу возникают размышления: а он ко мне поедет?</p></div></div>
+          <div class="dg__right dg__abs" style="left:934px;top:0;width:465px;height:100%"><div class="note  reveal" style="position:absolute;left:0;top:28px;width:465px"><p class="note__title">Отзывы и цена</p><p class="note__text">Теперь стали акцентными, так как являются опорой для пользователя в принятии решения</p></div><div class="note  reveal" style="position:absolute;left:0;top:186px;width:465px"><p class="note__title">Фотоотзывы</p><p class="note__text">Решила вынести фотографии клиентов прямо на карточку, так как им доверяют больше. Думаю, можно в приоритете показывать фото клиентов, а если их нет — портфолио</p></div><div class="note  reveal" style="position:absolute;left:0;top:388px;width:465px"><p class="note__title">Кнопка</p><p class="note__text">Теперь карточки разделяются, если у клиента есть предложение, пушим клиента ответить на него.</p></div><div class="note  reveal" style="position:absolute;left:0;top:575px;width:465px"><p class="note__title">Общее</p><p class="note__text">Карточка стала компактной и может работать как конструктор, если чего-то нет.</p></div></div>
+          <svg class="dg__arrow" viewBox="0 0 114.82 70.28" style="left:835.77px;top:44.72px;width:114.82px;height:70.28px;rotate:25.97deg"><g transform="translate(0 70.28) scale(1 -1)"> <path d="M0.000 34.644C0.000 34.644 24.776 17.322 24.776 17.322C38.979 7.391 58.330 9.452 70.123 22.151C70.123 22.151 114.820 70.277 114.820 70.277" vector-effect="non-scaling-stroke" fill="none" stroke="#E93B54" stroke-width="1.8" /> </g></svg><svg class="dg__arrow" viewBox="0 0 114.82 43.93" style="left:577.46px;top:84.22px;width:114.82px;height:43.93px;rotate:154.03deg"><path d="M0.000 8.293C0.000 8.293 30.012 4.147 30.012 4.147C49.171 1.500 68.574 6.853 83.664 18.950C83.664 18.950 114.820 43.927 114.820 43.927" vector-effect="non-scaling-stroke" fill="none" stroke="#E93B54" stroke-width="1.8" /></svg><svg class="dg__arrow" viewBox="0 0 119.2 61.29" style="left:831.84px;top:242.81px;width:119.2px;height:61.29px;rotate:25.97deg"><g transform="translate(0 61.29) scale(1 -1)"> <path d="M0.000 30.212C0.000 30.212 25.720 15.106 25.720 15.106C41.027 6.116 60.398 8.101 73.563 20.009C73.563 20.009 119.199 61.287 119.199 61.287" vector-effect="non-scaling-stroke" fill="none" stroke="#E93B54" stroke-width="1.8" /> </g></svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- Step 5 -->
+    <section class="cs-step" aria-labelledby="step5">
+      <div class="cs-head reveal">
+        <span class="cs-badge">Шаг 5</span>
+        <h2 class="cs-h1" id="step5">Что еще пробовала</h2>
+      </div>
+      <div class="cs-text reveal">
+        <p><strong>Больше информации на карточке.</strong> Я пробовала выводить на карточку больше данных, но отказалась от этого: выросла когнитивная нагрузка, и выбирать стало сложнее.</p>
+        <p><strong>Фото.</strong> Фото — главный аргумент при выборе, но не во всех категориях. Например, в задаче «Устранить течь» результат работы почти не виден, и фото пользователю ничего не скажут.</p>
+        <p><strong>Третий вариант.</strong> В целом он работает, но респонденты отмечали, что отзывы в нём плохо заметны.</p>
+      </div>
+      <div class="cs-row c1-concepts">
+        <div class="cs-shot__img"><img class="c1-concept-1" src="../img/profiru/c1-concept-1@2x.webp" width="750" height="1624" alt="Вариант 1: больше информации на карточке" loading="lazy"></div>
+        <div class="cs-shot__img"><img class="c1-concept-2" src="../img/profiru/c1-concept-2@2x.webp" width="750" height="966" alt="Вариант 2: акцент на фото" loading="lazy"></div>
+        <div class="cs-shot__img cs-shot__img--wide"><img class="c1-concept-3" src="../img/profiru/c1-concept-3@2x.webp" width="790" height="966" alt="Вариант 3" loading="lazy"></div>
+      </div>
+    </section>
+
+    <nav class="c1-nav" aria-label="Другие разделы">
+      <a class="reveal" href="case2"><span class="c1-nav__title">Продуктовый кейс</span><span class="c1-nav__arrow"><svg viewBox="0 0 16.29 36.42" aria-hidden="true"><path d="M15.432 17L16.286 18.211L15.432 19.422L3.432 36.422L0 34L11.145 18.211L0 2.422L3.432 0Z"/></svg></span></a>
+      <a class="reveal" style="--d:1" href="./"><span class="c1-nav__title">На главную</span><span class="c1-nav__arrow"><svg viewBox="0 0 16.29 36.42" aria-hidden="true"><path d="M15.432 17L16.286 18.211L15.432 19.422L3.432 36.422L0 34L11.145 18.211L0 2.422L3.432 0Z"/></svg></span></a>
+    </nav>
+  </main>
+
+  <script>
+    // scale the annotated diagrams to the column width (desktop); below 1000px CSS stacks them instead
+    (function () {
+      var dgs = document.querySelectorAll(".dg");
+      function fit() {
+        dgs.forEach(function (d) {
+          var w = parseFloat(getComputedStyle(d).getPropertyValue("--w")) || 1400;
+          d.style.setProperty("--k", Math.min(1, d.clientWidth / w));
+        });
+      }
+      fit();
+      if ("ResizeObserver" in window) { var ro = new ResizeObserver(fit); dgs.forEach(function (d) { ro.observe(d); }); }
+      else window.addEventListener("resize", fit);
+    })();
+
+    (function () {
+      var items = document.querySelectorAll(".reveal, .cs-row");
+      items.forEach(function (g) {
+        if (g.classList.contains("cs-row")) {
+          Array.prototype.forEach.call(g.children, function (el, i) { el.style.setProperty("--i", i); });
+        }
+      });
+      if (!("IntersectionObserver" in window)) {
+        items.forEach(function (el) { el.classList.add("is-visible"); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting || e.boundingClientRect.bottom < 0) {
+            e.target.classList.add("is-visible");
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      items.forEach(function (el) { io.observe(el); });
+    })();
+  </script>
+</body>
+</html>
