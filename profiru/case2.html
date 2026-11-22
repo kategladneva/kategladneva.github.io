@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Кейс. Прочитал — и пропал — Профи.ру, тестовое задание</title>
+  <meta name="description" content="Продуктовый кейс для Профи.ру: почему клиент бросает заказ после чтения откликов и как повысить конверсию в сделку.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../profiru-case2.css">
+  <script>document.documentElement.classList.add("js")</script>
+  <script>
+    // show the clean address (no .html) even if the page was opened with it
+    try { if (location.protocol.indexOf("http") === 0 && /\.html$/.test(location.pathname)) { history.replaceState(null, "", location.pathname.replace(/\.html$/, "") + location.search + location.hash); } } catch (e) {}
+  </script>
+  <script>
+    /* Microsoft Clarity analytics (only on the live site, not in local previews) */
+    if (/\.github\.io$/.test(location.hostname)) {
+      (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","zay5hi9ajr");
+    }
+  </script>
+</head>
+<body>
+  <main class="cs">
+    <div class="cs-glow cs-glow--top" aria-hidden="true"></div>
+    <a class="cs-nav" href="./">← Назад</a>
+
+    <!-- Intro -->
+    <section class="cs-step cs-intro">
+      <h1 class="cs-h1 reveal">Кейс. Прочитал — и пропал</h1>
+      <div class="cs-text reveal" style="--d:1">
+        <p>Проблема: клиент бросает заказ, прочитав несколько откликов.<br>У Профи списываются деньги, происходит потеря доверия к платформе.</p>
+        <p>Цель: повысить конверсию сделок</p>
+        <p>Задача: выявить барьеры клиентов, из-за которых он бросает заказ. Повлияв на которые, произойдет повышение конверсии</p>
+      </div>
+    </section>
+
+    <!-- Step 1 -->
+    <section class="cs-step cs-step--1" aria-labelledby="step1">
+      <div class="cs-head reveal">
+        <span class="cs-badge">Шаг 1</span>
+        <h2 class="cs-h1" id="step1">Что думают пользователи?</h2>
+      </div>
+      <div class="cs-text reveal">
+        <p>Написала в чатик своего ЖК, чтобы поговорить с людьми и выявить барьеры при выборе специалистов на Профи.ру.<br>4 - мужчины, 3 - женщины<br>Все пользовались вашим сервисом.</p>
+        <p>Выявила интересные барьеры:<br>
+          1. Клиенты знают, что просмотр отклика платный для специалиста и поэтому не открывают отклики<br>
+          2. Шаблонные сообщения от профи воспринимаются негативно трактуются как «он не вник в мою проблему»<br>
+          3. Коммуникация с хамством или высокомерная, обращают на этот параметр в отзывах и при общении<br>
+          4. Высокая цена (видят высокий ценник и уходят)<br>
+          5. К портфолио относятся с недоверием «Фотографии можно скачать откуда угодно, не факт что они принадлежат этому мастеру»<br>
+          6. Заходят посмотреть только цены, чтобы понять сколько стоит такая работа</p>
+        <p>Что им важно:<br>
+          1. Отзывы и фото. Желательно персонализировано, мне нужно повесить телевизор я смотрю отзывы как он другим повесил.<br>
+          2. Профессиональный тон коммуникации, без навязывания допов, без возражений<br>
+          3. Прозрачность сделки, готовы сотрудничать вне профи, если клиент сам предложит<br>
+          4. Если мастера рекомендуют, доверие становится высоким</p>
+        <p>Данные из качественного исследования, каждое утверждение необходимо подтвердить количественно, но для задания буду использовать эти инсайты.</p>
+      </div>
+    </section>
+
+    <!-- Step 2 -->
+    <section class="cs-step cs-step--2" aria-labelledby="step2">
+      <div class="cs-glow cs-glow--mid" aria-hidden="true"></div>
+      <div class="cs-head reveal">
+        <span class="cs-badge">Шаг 2</span>
+        <h2 class="cs-h1" id="step2">Мои мысли по флоу</h2>
+      </div>
+
+      <div class="cs-row">
+        <figure class="cs-shot">
+          <div class="cs-shot__img"><img src="../img/profiru/s2-specialists@2x.webp" width="642" height="1388" alt="Список специалистов, откликнувшихся на задачу" loading="lazy"></div>
+          <figcaption class="cs-note">Нет инфы о верификации документов. Хочется какую-то помощь при выборе, так как вроде все специалисты одинаковые</figcaption>
+        </figure>
+        <figure class="cs-shot">
+          <div class="cs-shot__img"><img src="../img/profiru/s2-template-reply@2x.webp" width="642" height="1388" alt="Шаблонный ответ специалиста в чате" loading="lazy"></div>
+          <figcaption class="cs-note">Примеры шаблонного ответа. В дело мое не вник, просто поставил максимум по цене</figcaption>
+        </figure>
+        <figure class="cs-shot cs-shot--pair">
+          <div class="cs-shot__pair">
+            <div class="cs-shot__img"><img src="../img/profiru/s2-profile@2x.webp" width="640" height="1388" alt="Профиль специалиста" loading="lazy"></div>
+            <div class="cs-shot__img"><img src="../img/profiru/s2-reviews@2x.webp" width="640" height="1388" alt="Отзывы о специалисте" loading="lazy"></div>
+          </div>
+          <figcaption class="cs-note">Долгий путь до отзывов и фотоотзывов, которые так важны людям.<br>Сортировка спрятана вглубь</figcaption>
+        </figure>
+      </div>
+
+      <div class="cs-more">
+        <p class="cs-text reveal">Так же я посмотрела, что происходит с пользователем вне флоу. Сервис меня не пытается вернуть в брошенный сценарий...</p>
+        <div class="cs-row" style="margin-top: var(--gap)">
+          <figure class="cs-shot">
+            <div class="cs-shot__img"><img src="../img/profiru/s2-push@2x.webp" width="640" height="1388" alt="Пуш-уведомления Профи.ру" loading="lazy"></div>
+            <figcaption class="cs-note cs-note--sq">Пуши мне явно не транслируют, что меня ждет в приложении 14 откликов от психологов</figcaption>
+          </figure>
+          <figure class="cs-shot">
+            <div class="cs-shot__img"><img src="../img/profiru/s2-home@2x.webp" width="640" height="1388" alt="Главная экран приложения" loading="lazy"></div>
+            <figcaption class="cs-note cs-note--sq">Зайдя на главную я тоже не увидела вовлечение в брошенный сценарий</figcaption>
+          </figure>
+          <figure class="cs-shot">
+            <div class="cs-shot__img"><img src="../img/profiru/s2-search@2x.webp" width="640" height="1388" alt="Экран поиска услуг" loading="lazy"></div>
+            <figcaption class="cs-note cs-note--sq">Нет истории поиска, у меня это было: Укладка фартука и Психолог, можно даже показывать в формате, что задача уже создана и есть отклики</figcaption>
+          </figure>
+          <figure class="cs-shot">
+            <div class="cs-shot__img"><img src="../img/profiru/s2-tasks@2x.webp" width="640" height="1388" alt="Список задач клиента" loading="lazy"></div>
+            <figcaption class="cs-note cs-note--sq">Нет CTA, задача скрыта, могу выдвинуть гипотезу что мне туда и не нужно. Цифры 14-30-10, а какая важная? :) А еще у меня есть удаленная задача и ее нет в этом списке, может нужно добавить, чтобы я могла быстро ее переоткрыть</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Step 3 -->
+    <section class="cs-step cs-step--3" aria-labelledby="step3">
+      <div class="cs-head reveal">
+        <span class="cs-badge">Шаг 3</span>
+        <h2 class="cs-h1" id="step3">Идеи по улучшению</h2>
+      </div>
+
+      <div class="cs-sub cs-sub--first">
+        <h3 class="cs-h3 reveal">Список специалистов</h3>
+        <div class="cs-text reveal">
+          <p>Добавить персонализацию, связанную с запросом клиента, так как клиент пойдет это выискивать в отзывах самостоятельно.<br>Например это могут быть бейджи: 40 заказов по вашей задаче, Мэтч 90%, пример как делает Авиасейлс. Помогаем принять решение</p>
+        </div>
+        <div class="cs-row">
+          <div class="cs-shot__img"><img src="../img/profiru/s2-specialists@2x.webp" width="642" height="1388" alt="Список специалистов сейчас" loading="lazy"></div>
+          <div class="cs-shot__img">
+            <img src="../img/profiru/s3-avia@2x.webp" width="642" height="1388" alt="Пример персональных бейджей в Авиасейлс" loading="lazy">
+            <span class="cs-zoom cs-zoom--avia" style="background-image:url('../img/profiru/s3-avia@2x.webp')" aria-hidden="true"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cs-sub">
+        <h3 class="cs-h3 reveal">Флоу выбора</h3>
+        <div class="cs-text reveal">
+          <p>Делаю допущение, что чтение отзывов обязательный шаг для большинства (так как это упоминали все)<br>
+            Сценарий сейчас: Открыть отклик <span class="cs-arr">→</span> Чтение сообщения <span class="cs-arr">→</span> Переход в профиль <span class="cs-arr">→</span> Чтение отзывов <span class="cs-arr">→</span> Возврат к списку специалистов <span class="cs-arr">→</span> Повторение цикла</p>
+          <p>Вижу в этом проблему, что клиентам приходится долго добираться до отзыва, через чат. Можно решить это так: Первый вариант, вести пользователя на карточку специалиста, и в ней поднять отзывы в первый экран + сделать фиксированный CTA «Ответить».</p>
+          <p>Что получим:<br>
+            1. Клиент не будет тратить деньги специалиста, не убедившись что он ему подходит<br>
+            2. Меньше кликов до выбора</p>
+        </div>
+        <div class="cs-flow">
+          <div class="cs-row">
+            <div class="cs-shot__img"><img src="../img/profiru/flow-1@2x.webp" width="642" height="1388" alt="Флоу, шаг 1: отклик" loading="lazy"></div>
+            <div class="cs-shot__img"><img src="../img/profiru/flow-2@2x.webp" width="642" height="1388" alt="Флоу, шаг 2: профиль специалиста с отзывами на первом экране" loading="lazy"></div>
+            <div class="cs-shot__img"><img src="../img/profiru/flow-3@2x.webp" width="642" height="1388" alt="Флоу, шаг 3: выбор специалиста" loading="lazy"></div>
+          </div>
+          <p class="cs-note cs-note--sq reveal">Открыть отклик → Переход в профиль профи → Чтение отзывов → Выбор специалиста</p>
+        </div>
+      </div>
+
+      <div class="cs-sub">
+        <div class="cs-text reveal">
+          <p>Второй — можно в чат ввести ИИ-саммери отзывов по этой услуге. Обязательно в саммери уделить вниманию: качеству и коммуникации.<br>Например у Авито есть в чатах сообщения от них.</p>
+          <p>Что получим: — Облегчаем поиск информации, возможно решение будет принято прям в чате</p>
+        </div>
+        <div class="cs-row">
+          <div class="cs-shot__img"><img src="../img/profiru/chat-ai-summary@2x.webp" width="642" height="1388" alt="Чат с ИИ-саммери отзывов" loading="lazy"></div>
+        </div>
+      </div>
+
+      <div class="cs-sub">
+        <h3 class="cs-h3 reveal">Коммуникация</h3>
+        <div class="cs-text reveal">
+          <p>Сообщение клиенту должно быть персонализировано в профессиональном тоне.</p>
+          <p>Первое, сделать гайд/шаблон для специалистов по общению (где важно описать этику - без хамства, навязывания допов и тд)</p>
+          <p>Второе, выцепляем важное из текста объявления и ИИ формирует первое сообщение: обращение по имени, маленькое саммери, почему специалист может взять именно эту задачу. Можно даже задать вопросы в конце и предоставить клиенту чипсы с выборами ответов.</p>
+          <p>Третье, в отзывах клиентов можно сделать отдельно поле «Коммуникация», чтобы люди самостоятельно не выискивали глазами</p>
+        </div>
+      </div>
+
+      <div class="cs-sub">
+        <h3 class="cs-h3 reveal">Фотографии</h3>
+        <div class="cs-text reveal">
+          <p>Даем приоритет фото клиентов, а после портфолио. В фотогалерее можно сразу давать кнопку «Выбрать специалиста», если пользователь на этом шаге осознал, что Профи подходит</p>
+        </div>
+        <div class="cs-row">
+          <figure class="cs-shot">
+            <div class="cs-shot__img"><img src="../img/profiru/photos-now@2x.webp" width="640" height="1388" alt="Фото клиента из отзыва сейчас" loading="lazy"></div>
+            <figcaption class="cs-note">Сейчас при открытии фото клиента из отзывов, ощущение что специалист сам его загрузил</figcaption>
+          </figure>
+          <figure class="cs-shot">
+            <div class="cs-shot__img"><img src="../img/profiru/photos-better@2x.webp" width="640" height="1388" alt="Фото клиента с кнопкой «Выбрать специалиста»" loading="lazy"></div>
+            <figcaption class="cs-note">Пример улучшения</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="cs-sub">
+        <h3 class="cs-h3 reveal">Высокая цена</h3>
+        <div class="cs-text reveal">
+          <p>Дать возможность отредактировать диапазон цен, после того как увидели уже специалистов. Добавить фильтр «Цена».</p>
+        </div>
+      </div>
+
+      <div class="cs-sub">
+        <h3 class="cs-h3 reveal">Возвращение в брошенный сценарий</h3>
+        <div class="cs-text reveal">
+          <p>Нужно сделать пуши, виджет на главной, историю поиска, карточка задачи — все должно напоминать, что клиент бросил сценарий</p>
+        </div>
+        <div class="cs-row">
+          <figure class="cs-shot">
+            <div class="cs-shot__img">
+              <img src="../img/profiru/return-avito@2x.webp" width="640" height="1388" alt="Авито: виджет незавершённого сценария на главной" loading="lazy">
+              <span class="cs-zoom cs-zoom--avito" style="background-image:url('../img/profiru/return-avito@2x.webp')" aria-hidden="true"></span>
+            </div>
+            <figcaption class="cs-note">Авито. Виджет на главной</figcaption>
+          </figure>
+          <figure class="cs-shot">
+            <div class="cs-shot__img"><img src="../img/profiru/return-youdo@2x.webp" width="640" height="1388" alt="YouDo: виджет задачи на главной" loading="lazy"></div>
+            <figcaption class="cs-note">Youdo. На ui не смотрим, Виджет на главной, есть обновление откликов и есть кнопка «Выбрать исполнителя»</figcaption>
+          </figure>
+          <figure class="cs-shot">
+            <div class="cs-shot__img"><img src="../img/profiru/return-push@2x.webp" width="640" height="1388" alt="Пуш с напоминанием об откликах" loading="lazy"></div>
+            <figcaption class="cs-note">Напоминать об откликах после того как клиент бросил задачу.</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="cs-sub">
+        <h3 class="cs-h3 reveal">Профи платит за просмотр</h3>
+        <div class="cs-text reveal">
+          <p>Здесь нужно работать над имиджем сервиса, рассказывать через истории как клиенту помогли, что специалисты не бедные-несчастные, а через сервис много зарабатывают. Например, через инфлюэнсеров.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Thanks -->
+    <section class="cs-step cs-thanks" aria-labelledby="thanks">
+      <div class="cs-head reveal">
+        <span class="cs-badge">Ну вот и все)</span>
+        <div>
+          <h2 class="cs-h1" id="thanks">Спасибо</h2>
+          <div class="cs-text" style="margin-top: 24px">
+            <p>Думаю, что при работе с этими барьерами вырастет конверсия в сделку и специалисты будут меньше платить за просмотры.<br>Спасибо за внимание</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      var items = document.querySelectorAll(".reveal, .cs-row");
+      items.forEach(function (g) {
+        if (g.classList.contains("cs-row")) {
+          Array.prototype.forEach.call(g.children, function (el, i) { el.style.setProperty("--i", i); });
+        }
+      });
+      if (!("IntersectionObserver" in window)) {
+        items.forEach(function (el) { el.classList.add("is-visible"); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting || e.boundingClientRect.bottom < 0) {
+            e.target.classList.add("is-visible");
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      items.forEach(function (el) { io.observe(el); });
+    })();
+  </script>
+</body>
+</html>
