@@ -1,5 +1,6 @@
 /* Profi.ru test assignment — mobile prototype «Все специалисты» (375 design) */
 
+
 :root {
   --sans: "CoFo Sans", "CoFo Sans LaModa", "Onest", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
   --bg: #F5F5F5;
@@ -26,7 +27,8 @@ body {
 h1, h2, p { margin: 0; font-weight: 400; }
 img, svg { display: block; }
 button { font: inherit; color: inherit; border: 0; background: none; padding: 0; cursor: pointer; }
-.m { font-weight: 500; }
+/* bold text: Onest 600 — closest match to CoFo Sans Medium from the design, same on every device */
+.m { font-family: "Onest", var(--sans); font-weight: 600; }
 
 .app {
   position: relative;
@@ -56,7 +58,7 @@ button { font: inherit; color: inherit; border: 0; background: none; padding: 0;
 }
 .head__row { display: flex; justify-content: space-between; align-items: center; padding: 20px 0 8px; }
 .head__title { font-size: 24px; }
-.head__count { font-size: 16px; color: var(--muted); }
+.head__count { color: var(--muted); }   /* same size as the title, as in the design */
 .head__close { width: 22px; height: 22px; display: grid; place-items: center; }
 .head__close svg { width: 17.21px; height: 17.21px; }
 .head__sub { max-width: 305px; font-size: 16px; line-height: 1; }
