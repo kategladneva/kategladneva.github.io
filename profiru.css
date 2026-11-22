@@ -1,0 +1,126 @@
+/* Profi.ru test assignment — title page (standalone, light) */
+
+:root {
+  --sans: "CoFo Sans LaModa", "Onest", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --ink: #000;
+  --paper: #fff;
+  --card: #E9EAF1;
+  --card-hover: #DFE1EB;
+  --pad: clamp(16px, 5.16vw, 78px);   /* 78px at 1512 */
+  --radius: clamp(24px, 2.12vw, 32px);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+h1, h2, p { margin: 0; font-weight: 400; }
+img, svg { display: block; }
+a { color: inherit; text-decoration: none; }
+
+.pr {
+  width: 100%;
+  max-width: calc(1356px + var(--pad) * 2);
+  margin: 0 auto;
+  padding: 0 var(--pad) var(--pad);
+  overflow: hidden;
+  /* fill the screen and keep the cards at the bottom,
+     with the same gap below them as above the logo */
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+.pr-head { flex: 1 0 auto; }
+
+/* ---------- Head: logo + subtitle on the left, illustration resting on the cards ---------- */
+.pr-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(200px, 27.85vw, 421px);
+  column-gap: 24px;
+  align-items: end;
+}
+.pr-head__text { align-self: start; padding-top: var(--pad); }
+.pr-logo { width: clamp(220px, 39.7vw, 600px); height: auto; }
+.pr-sub {
+  margin-top: clamp(28px, 3.7vw, 56px);
+  font-size: clamp(18px, 1.85vw, 28px);
+  line-height: 1.214;
+}
+.pr-pic { justify-self: end; width: 100%; margin-right: clamp(0px, 0.27vw, 4px); }
+.pr-pic img { width: 100%; height: auto; }
+
+/* ---------- Cards ---------- */
+.pr-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.pr-card {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: clamp(200px, 19.5vw, 295px);
+  padding: 0 clamp(24px, 2.9vw, 44px) clamp(24px, 2.65vw, 40px);
+  border-radius: var(--radius);
+  background: var(--card);
+  transition: background-color 0.25s ease;
+}
+.pr-card__title {
+  max-width: 429px;
+  padding-bottom: clamp(0px, 0.26vw, 4px);
+  font-size: clamp(36px, 4.23vw, 64px);
+  line-height: 0.9;
+  letter-spacing: -0.01em;
+}
+.pr-card__arrow {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: clamp(48px, 3.97vw, 60px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--paper);
+  transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.pr-card__arrow svg { width: 40%; height: auto; }
+
+@media (hover: hover) {
+  .pr-card:hover { background: var(--card-hover); }
+  .pr-card:hover .pr-card__arrow { transform: translateX(6px); }
+}
+.pr-card:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+
+/* ---------- Motion: same as the rest of the portfolio ---------- */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(48px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: calc(var(--d, 0) * 120ms);
+}
+.js .reveal.is-visible { opacity: 1; transform: none; }
+
+/* ---------- Phones ---------- */
+@media (max-width: 720px) {
+  .pr { padding-bottom: 32px; }
+  .pr-head { grid-template-columns: 1fr; }
+  .pr-head__text { padding-top: 32px; }
+  .pr-pic { width: min(56vw, 280px); margin: 16px 0 0; }
+  .pr-cards { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .pr-card { min-height: 180px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal { transform: none; transition: opacity 0.4s ease; }
+  .pr-card__arrow { transition: none; }
+}
