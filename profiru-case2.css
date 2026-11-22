@@ -55,9 +55,12 @@ a { color: inherit; text-decoration: none; }
   background: radial-gradient(50% 50% at 50% 50%, var(--red) 0%, rgba(0, 0, 0, 0) 100%);
   pointer-events: none;
 }
-.cs-glow--top { left: -55.49vw; top: -35.19vw; }
+/* red1: top-right (x 604, y -844 at 1512) */
+.cs-glow--top { left: 39.95vw; top: -55.82vw; }
 .cs-step--2 { position: relative; }
-.cs-glow--mid { left: calc(11.9vw); top: -34.13vw; }
+/* red2: left, behind the start of step 2 (x -328, y 1344 at 1512 = 516px above step 2);
+   positioned from the page edge, so subtract the step's own left offset */
+.cs-glow--mid { left: calc(-21.69vw - max(var(--pad-x), (100vw - 1356px) / 2)); top: -34.13vw; }
 
 .cs-nav {
   position: absolute;
