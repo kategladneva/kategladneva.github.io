@@ -165,7 +165,7 @@ button { font: inherit; color: inherit; border: 0; background: none; padding: 0;
   gap: 24px;
   padding: 32px 16px 40px;
 }
-.more__inner { width: 179px; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.more__inner { min-width: 179px; display: flex; flex-direction: column; align-items: center; gap: 16px; }
 .stack { display: flex; align-items: center; }
 .stack > * {
   width: 40px; height: 40px; flex: none;
@@ -198,3 +198,11 @@ button { font: inherit; color: inherit; border: 0; background: none; padding: 0;
   pointer-events: none;
 }
 .nw { white-space: nowrap; }
+
+/* narrow phones (< 360px): let long names wrap and tighten the stats row */
+@media (max-width: 359px) {
+  .pro__name { white-space: normal; }
+  .pro__stats, .card--wide-stats .pro__stats { gap: 12px; }
+  .stat:first-child { min-width: 0; }
+  .stat__val { white-space: normal; }
+}
