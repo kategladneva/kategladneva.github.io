@@ -1,0 +1,130 @@
+/* Profi.ru test assignment — Case 1 «Редизайн ленты специалистов».
+   Loaded after profiru-case2.css, which holds the shared base (type, badges, glows, rows, motion). */
+
+/* red glows, as in the design */
+.c1-glow--top { left: 47.95vw; top: -27.25vw; }                       /* x 725, y -412 at 1512 */
+.c1-step1 { position: relative; }
+.c1-glow--mid { left: calc(0vw - max(var(--pad-x), (100vw - 1356px) / 2)); top: -24.87vw; }  /* x 0, y 824 = 376px above step 1 */
+
+.c1-text-wide { max-width: 1034px; }
+.cs-text strong { font-weight: 700; }
+
+/* ---------- Hero: before / after + QR ---------- */
+.c1-hero { display: flex; justify-content: space-between; align-items: flex-start; gap: 32px; margin-top: 33px; }
+.c1-pair { display: flex; gap: clamp(12px, 2.51vw, 38px); }
+.c1-pair img {
+  width: clamp(150px, 24.8vw, 375px);
+  height: auto;
+  aspect-ratio: 375 / 812;
+  border-radius: clamp(20px, 2.51vw, 38px);
+}
+.c1-qr {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  border-radius: 4px;
+  background: #fff;
+  color: #000;
+  overflow: hidden;
+  transition: transform 0.25s ease;
+}
+.c1-qr img { width: 200px; height: 200px; }
+.c1-qr span { margin-top: -4px; padding-bottom: 4px; font-size: 20px; line-height: 26px; letter-spacing: -0.008em; text-align: center; }
+.c1-qr:hover { transform: translateY(-4px); }
+@media (max-width: 1023px) { .c1-qr { display: none; } }   /* QR only on desktop */
+
+/* ---------- Annotated diagrams (steps 1 and 4) ----------
+   Desktop: the whole composition keeps the design's coordinates and is scaled to the column (JS sets --k).
+   Phones/tablets: the screen comes first and the notes follow as a list; arrows are hidden. */
+.dg { position: relative; width: 100%; aspect-ratio: var(--w) / var(--h); }
+.dg__canvas {
+  position: absolute;
+  left: 0; top: 0;
+  width: calc(var(--w) * 1px);
+  height: calc(var(--h) * 1px);
+  transform: scale(var(--k, 1));
+  transform-origin: 0 0;
+}
+.dg__abs { position: absolute; }
+.dg__arrow { position: absolute; overflow: visible; transform-origin: 0 0; pointer-events: none; }
+.dg__col { display: flex; flex-direction: column; gap: 32px; }
+
+.note {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 24px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  letter-spacing: -0.008em;
+}
+.note__title { font-size: 24px; line-height: 1.1; font-weight: 500; }
+.note__text { font-size: 20px; line-height: 1.1; }
+
+.c1-phone { border-radius: 38px; width: 375px; height: 812px; }
+.c1-cards { display: flex; flex-direction: column; gap: 8px; width: 375px; }
+.c1-card { width: 375px; border-radius: 16px; background: #fff; overflow: hidden; }
+.c1-card img { width: 100%; height: auto; }
+.c1-card .c1-badges { width: 213px; }
+
+@media (max-width: 1000px) {
+  .dg { aspect-ratio: auto; }
+  .dg__canvas {
+    position: static;
+    width: auto; height: auto;
+    transform: none;
+    display: flex; flex-direction: column; gap: 16px;
+  }
+  .dg__abs { position: static; width: auto !important; }
+  .dg__arrow { display: none; }
+  .dg__col { gap: 16px; }
+  .dg__right { display: flex; flex-direction: column; gap: 16px; height: auto !important; }
+  /* the notes carry their desktop coordinates inline, so override them here */
+  .dg__right > .note { position: static !important; width: auto !important; }
+  .c1-phone, .c1-cards { align-self: center; width: min(375px, 100%); height: auto; }
+  .c1-card { width: 100%; }
+  .c1-cards { order: -1; }
+  .note { padding: 16px; }
+  .note__title { font-size: 20px; }
+  .note__text { font-size: 16px; }
+}
+
+/* ---------- Step 5: three concepts of different sizes ---------- */
+.c1-concepts .cs-shot__img { width: calc(var(--phone) * 375 / 321); }
+.c1-concepts .cs-shot__img--wide { width: calc(var(--phone) * 395 / 321); }
+.c1-concepts img { aspect-ratio: auto !important; height: auto; }
+.c1-concepts .c1-concept-1 { border-radius: clamp(24px, 2.12vw, 32px); }
+.c1-concepts .c1-concept-2 { border-radius: 16px; }
+.c1-concepts .c1-concept-3 { border-radius: 0; background: none; }
+
+/* ---------- Bottom navigation (like the title page cards) ---------- */
+.c1-nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: clamp(80px, 9.26vw, 140px); }
+.c1-nav a {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: clamp(180px, 19.5vw, 295px);
+  padding: 0 clamp(24px, 2.9vw, 44px) clamp(24px, 2.65vw, 40px);
+  border-radius: clamp(24px, 2.12vw, 32px);
+  background: #E9EAF1;
+  color: #000;
+  transition: background-color 0.25s ease;
+}
+.c1-nav__title { max-width: 429px; padding-bottom: 4px; font-size: clamp(32px, 4.23vw, 64px); line-height: 0.9; letter-spacing: -0.01em; }
+.c1-nav__arrow {
+  flex: none; display: grid; place-items: center;
+  width: clamp(48px, 3.97vw, 60px); aspect-ratio: 1;
+  border-radius: 50%; background: #fff;
+  transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.c1-nav__arrow svg { width: 26.7%; height: auto; }
+@media (hover: hover) {
+  .c1-nav a:hover { background: #DFE1EB; }
+  .c1-nav a:hover .c1-nav__arrow { transform: translateX(6px); }
+}
+@media (max-width: 720px) { .c1-nav { grid-template-columns: minmax(0, 1fr); gap: 12px; } }
