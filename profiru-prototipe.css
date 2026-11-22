@@ -181,7 +181,7 @@ button { font: inherit; color: inherit; border: 0; background: none; padding: 0;
   display: grid; place-items: center;
   background: #FFF0D1; color: #7A4E00; font-size: 13px;
 }
-.more__title { font-size: 16px; line-height: 1.1; text-align: center; }
+.more__title { font-size: 20px; line-height: 1.1; text-align: center; }
 .more__rating { display: flex; align-items: center; gap: 2px; margin-top: -8px; }
 .more__rating svg { width: 16px; height: 16px; }
 .more .cta { align-self: stretch; }
