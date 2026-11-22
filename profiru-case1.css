@@ -128,3 +128,11 @@
   .c1-nav a:hover .c1-nav__arrow { transform: translateX(6px); }
 }
 @media (max-width: 720px) { .c1-nav { grid-template-columns: minmax(0, 1fr); gap: 12px; } }
+
+/* arrows: one overlay per diagram — dot on the left end, arrowhead on the right, same S-curve everywhere */
+.dg__arrows { position: absolute; left: 0; top: 0; overflow: visible; pointer-events: none; }
+@media (max-width: 1000px) { .dg__arrows { display: none; } }
+
+/* source link in step 3 */
+.c1-src { text-decoration: underline; text-underline-offset: 0.18em; text-decoration-thickness: 1px; transition: opacity 0.2s ease; }
+.c1-src:hover { opacity: 0.7; }
