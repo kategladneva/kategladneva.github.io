@@ -91,7 +91,7 @@ a { color: inherit; text-decoration: none; }
   background: var(--paper);
   transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
-.pr-card__arrow svg { width: 40%; height: auto; }
+.pr-card__arrow svg { width: 26.7%; height: auto; }  /* 16 x 36 glyph in a 60px circle, as in the design */
 
 @media (hover: hover) {
   .pr-card:hover { background: var(--card-hover); }
