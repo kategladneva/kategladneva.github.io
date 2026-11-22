@@ -1,0 +1,207 @@
+/* Profi.ru test assignment — Case 2 «Прочитал — и пропал» (standalone, dark) */
+
+:root {
+  --sans: "CoFo Sans LaModa", "Onest", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --white: #fff;
+  --muted: rgba(255, 255, 255, 0.5);
+  --red: #E72541;
+
+  --pad-x: clamp(16px, 3.97vw, 60px);        /* 60 at 1512 */
+  --pad-top: clamp(72px, 6.08vw, 92px);      /* 92 */
+  --gap-step: clamp(64px, 6.6vw, 100px);     /* between steps */
+  --gap-sub: clamp(48px, 4.23vw, 64px);      /* between sub-sections */
+  --gap: clamp(20px, 2.12vw, 32px);          /* 32 */
+
+  --t-h1: clamp(34px, 4.23vw, 64px);
+  --t-h3: clamp(24px, 2.65vw, 40px);
+  --t-body: clamp(18px, 1.85vw, 28px);
+  --t-note: clamp(15px, 1.32vw, 20px);
+
+  --phone: clamp(240px, 21.23vw, 321px);     /* 321 x 694 */
+  --phone-gap: clamp(16px, 1.59vw, 24px);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; background: #000; }
+body {
+  margin: 0;
+  color: var(--white);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+h1, h2, h3, p, figure { margin: 0; font-weight: 400; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+
+.cs {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 100vh;
+  padding: var(--pad-top) var(--pad-x) clamp(100px, 13vw, 197px);
+  background: linear-gradient(180deg, #000 -12.41%, #404656 140.5%);
+}
+
+/* red glows (as in the design: one at the top-left, one behind steps 1-2) */
+.cs-glow {
+  position: absolute;
+  z-index: -1;
+  width: 100.33vw;
+  aspect-ratio: 1517 / 1584;
+  background: radial-gradient(50% 50% at 50% 50%, var(--red) 0%, rgba(0, 0, 0, 0) 100%);
+  pointer-events: none;
+}
+.cs-glow--top { left: -55.49vw; top: -35.19vw; }
+.cs-step--2 { position: relative; }
+.cs-glow--mid { left: calc(11.9vw); top: -34.13vw; }
+
+.cs-nav {
+  position: absolute;
+  top: clamp(16px, 2.1vw, 32px);
+  left: var(--pad-x);
+  font-size: 16px;
+  color: var(--muted);
+  transition: color 0.2s ease;
+}
+.cs-nav:hover, .cs-nav:focus-visible { color: var(--white); }
+
+/* ---------- Type ---------- */
+.cs-h1 { font-size: var(--t-h1); line-height: 1.1; letter-spacing: -0.0025em; }
+.cs-h3 { font-size: var(--t-h3); line-height: 1.2; }
+.cs-text { max-width: 900px; font-size: var(--t-body); line-height: 1.214; }
+.cs-text p + p { margin-top: 1.214em; }
+.cs-arr { color: var(--muted); font-size: 0.57em; vertical-align: 0.15em; }
+
+.cs-badge {
+  display: inline-block;
+  padding: 0.36em 0.86em;
+  border-radius: 100px;
+  background: var(--white);
+  color: #000;
+  font-size: var(--t-body);
+  line-height: 1.214;
+}
+
+/* ---------- Layout ---------- */
+.cs-step + .cs-step { margin-top: var(--gap-step); }
+.cs-sub { margin-top: var(--gap-sub); }
+.cs-head { display: flex; flex-direction: column; align-items: flex-start; gap: var(--gap); }
+.cs-intro { display: flex; flex-direction: column; gap: 24px; }
+.cs-step > :not(.cs-glow) + :not(.cs-glow) { margin-top: var(--gap); }
+/* specific gaps (same specificity as the rule above, so they win by order) */
+.cs-step--1 > :not(.cs-glow) + :not(.cs-glow) { margin-top: 24px; }
+.cs-intro > :not(.cs-glow) + :not(.cs-glow) { margin-top: 0; }
+.cs-step > :not(.cs-glow) + .cs-sub:not(.cs-glow) { margin-top: var(--gap-sub); }
+.cs-step > :not(.cs-glow) + .cs-sub--first:not(.cs-glow) { margin-top: var(--gap); }
+.cs-sub > .cs-h3 + .cs-text { margin-top: 12px; }
+.cs-sub > * + .cs-row,
+.cs-sub > * + .cs-phone,
+.cs-sub > * + .cs-flow { margin-top: var(--gap); }
+.cs-more { padding-top: var(--gap); }
+.cs-step--3 .cs-sub--first { margin-top: var(--gap); }
+.cs-step--3 .cs-sub--first > .cs-row { margin-top: 28px; }
+.cs-thanks .cs-h1 + .cs-text { margin-top: 24px; }
+
+/* ---------- Phones ---------- */
+.cs-row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--phone-gap);
+}
+.cs-shot { flex: none; width: var(--phone); display: flex; flex-direction: column; gap: var(--phone-gap); }
+.cs-shot--pair { width: calc(var(--phone) * 2 + var(--phone-gap)); }
+.cs-shot__pair { display: flex; gap: var(--phone-gap); }
+.cs-shot__img { position: relative; width: var(--phone); flex: none; }
+.cs-shot__img > img,
+.cs-phone > img {
+  width: 100%;
+  aspect-ratio: 321 / 694;
+  object-fit: cover;
+  border-radius: clamp(24px, 2.12vw, 32px);
+  background: #1b1d24;
+}
+.cs-phone { width: var(--phone); }
+
+/* glass captions */
+.cs-note {
+  padding: clamp(16px, 1.59vw, 24px);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  font-size: var(--t-note);
+  line-height: 1.1;
+  letter-spacing: -0.008em;
+}
+.cs-note--sq { border-radius: 4px; }
+
+/* zoomed fragments that stick out of a screen */
+.cs-zoom {
+  position: absolute;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.6s ease 0.45s, transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) 0.45s;
+}
+.cs-zoom--avito {
+  left: -3.125%; top: 37.03%; width: 106.875%; height: 11.96%;
+  background-size: 100% 893.94%;
+  background-position: 0% 42.59%;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px 10px rgba(0, 0, 0, 0.2);
+}
+.cs-zoom--avia {
+  left: -4.91%; top: 28.39%; width: 74.3%; height: 6.92%;
+  background-size: 308.81% 3323.18%;
+  background-position: 7.01% 31.39%;
+  border-radius: 48px;
+}
+.js .is-visible .cs-zoom, html:not(.js) .cs-zoom { opacity: 1; transform: none; }
+
+/* flow: three screens + one wide caption */
+.cs-flow { display: flex; flex-direction: column; gap: var(--phone-gap); width: max-content; max-width: 100%; }
+.cs-flow .cs-note { text-align: center; }
+
+/* ---------- Motion: same as the rest of the portfolio ---------- */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(48px);
+  transition: opacity 0.7s ease, transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: calc(var(--d, 0) * 120ms);
+}
+.js .reveal.is-visible { opacity: 1; transform: none; }
+.js .cs-row > * {
+  opacity: 0;
+  transform: translateY(48px);
+  transition: opacity 0.7s ease, transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: calc(var(--i, 0) * 90ms);
+}
+.js .cs-row.is-visible > * { opacity: 1; transform: none; }
+
+/* ---------- Narrow screens: phone rows scroll sideways ---------- */
+@media (max-width: 1180px) {
+  .cs-row {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    margin-inline: calc(var(--pad-x) * -1);
+    padding-inline: var(--pad-x);
+    scroll-padding-inline: var(--pad-x);
+    scrollbar-width: none;
+    /* room for the zoomed fragments that stick out */
+    padding-block: 4px 12px;
+  }
+  .cs-row::-webkit-scrollbar { display: none; }
+  .cs-row > * { scroll-snap-align: start; }
+  .cs-flow { width: auto; }
+  .cs-flow .cs-row { padding-bottom: 0; }
+}
+@media (max-width: 720px) {
+  :root { --phone: 240px; }
+  .cs-zoom--avito { left: 0; width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal, .js .cs-row > *, .cs-zoom { transform: none; transition: opacity 0.4s ease; }
+}
