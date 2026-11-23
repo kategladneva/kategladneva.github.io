@@ -16,7 +16,8 @@
 
   --t-h1: clamp(34px, 4.23vw, 64px);
   --t-h3: clamp(24px, 2.65vw, 40px);
-  --t-body: clamp(18px, 1.85vw, 28px);
+  --t-body: clamp(16px, 1.32vw, 20px);    /* body text: 20 at 1512 */
+  --t-badge: clamp(18px, 1.85vw, 28px);   /* step badges stay 28 */
   --t-note: clamp(15px, 1.32vw, 20px);
 
   --phone: clamp(240px, 21.23vw, 321px);     /* 321 x 694 */
@@ -79,8 +80,8 @@ a { color: inherit; text-decoration: none; }
 /* ---------- Type ---------- */
 .cs-h1 { font-size: var(--t-h1); line-height: 1.1; letter-spacing: -0.0025em; }
 .cs-h3 { font-size: var(--t-h3); line-height: 1.2; }
-.cs-text { max-width: 900px; font-size: var(--t-body); line-height: 1.214; }
-.cs-text p + p { margin-top: 1.214em; }
+.cs-text { max-width: 900px; font-size: var(--t-body); line-height: 1.2; }
+.cs-text p + p { margin-top: 1.2em; }
 .cs-arr { color: var(--muted); font-size: 0.57em; vertical-align: 0.15em; }
 
 .cs-badge {
@@ -89,7 +90,7 @@ a { color: inherit; text-decoration: none; }
   border-radius: 100px;
   background: var(--white);
   color: #000;
-  font-size: var(--t-body);
+  font-size: var(--t-badge);
   line-height: 1.214;
 }
 
