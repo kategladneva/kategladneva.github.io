@@ -80,7 +80,7 @@ a { color: inherit; text-decoration: none; }
 /* ---------- Type ---------- */
 .cs-h1 { font-size: var(--t-h1); line-height: 1.1; letter-spacing: -0.0025em; }
 .cs-h3 { font-size: var(--t-h3); line-height: 1.2; }
-.cs-text { max-width: 900px; font-size: var(--t-body); line-height: 1.2; }
+.cs-text { max-width: 720px; font-size: var(--t-body); line-height: 1.2; }
 .cs-text p + p { margin-top: 1.2em; }
 .cs-arr { color: var(--muted); font-size: 0.57em; vertical-align: 0.15em; }
 

@@ -6,7 +6,7 @@
 .c1-step1 { position: relative; }
 .c1-glow--mid { left: calc(0vw - max(var(--pad-x), (100vw - 1356px) / 2)); top: -24.87vw; }  /* x 0, y 824 = 376px above step 1 */
 
-.c1-text-wide { max-width: 1034px; }
+.c1-text-wide { max-width: 720px; }   /* same 720px column as every body text */
 .cs-text strong { font-weight: 700; }
 
 /* ---------- Hero: before / after + QR ---------- */
