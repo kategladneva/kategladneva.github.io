@@ -15,7 +15,7 @@
   --gap: clamp(20px, 2.12vw, 32px);          /* 32 */
 
   --t-h1: clamp(34px, 4.23vw, 64px);
-  --t-h3: clamp(24px, 2.65vw, 40px);
+  --t-h3: clamp(22px, 2.12vw, 32px);      /* sub-section headings: 32 at 1512 */
   --t-body: clamp(16px, 1.32vw, 20px);    /* body text: 20 at 1512 */
   --t-badge: clamp(18px, 1.85vw, 28px);   /* step badges stay 28 */
   --t-note: clamp(15px, 1.32vw, 20px);
